@@ -2,7 +2,7 @@ define(['resources', 'levels/test', 'character', 'water'], function(resources, T
   function Game() { }
 
   Game.prototype.run = function() {
-    if (!me.video.init('screen', 640, 480, true, 'auto')) {
+    if (!me.video.init('screen', 912, 544, true)) {
       alert('Your browser does not support HTML5 canvas.');
       return;
     }
