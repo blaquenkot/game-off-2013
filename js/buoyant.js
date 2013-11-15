@@ -8,14 +8,14 @@ define([], function() {
 		init: function(x, y, settings) {
 			this.parent(x, y, settings);
 			this.alwaysUpdate = true;
-			this.floatingFactor = settings.floatingFactor || 1;
+			this.floatingFactor = settings.floatingFactor || 0.25;
 			this.z = 1001;
 		},
 		update: function() {
 			var water = me.state.current().water;
 
-			if (water.isOver(this)) {
-				var submerged = water.submerged(this);
+			var submerged = water.submerged(this);
+			if (submerged > 0) {
 				this.vel.y = -this.gravity * submerged * this.floatingFactor;
 			}
 

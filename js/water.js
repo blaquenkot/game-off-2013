@@ -23,7 +23,7 @@ define([], function() {
 			return this.drawn && renderable.top > this.pos.y;
 		},
 		submerged: function(renderable) {
-			return renderable.top - this.pos.y;
+			return this.drawn ? renderable.bottom - this.pos.y : 0;
 		}
 	});
 
