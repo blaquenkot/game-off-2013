@@ -19,10 +19,10 @@ define(['../environment', 'water', 'entities/log', 'entities/tools/waterTool'],
 				me.game.world.addChild(this.water);
 
 				// TODO: Added just as a test
-				this.log = new Log(120, 350);
-				me.game.world.addChild(this.log);
-				waterTool = new WaterTool(360, 350);
-				me.game.world.addChild(waterTool);
+				// this.log = new Log(120, 350);
+				// me.game.world.addChild(this.log);
+				// waterTool = new WaterTool(360, 350);
+				// me.game.world.addChild(waterTool);
 			},
 			waterHeight: function() {
 				return this.environment.waterLevel - this.baseHeight;
