@@ -1,10 +1,9 @@
-define(['waterTool', 'entities/log'], function(WaterTool, Log) {
+define(['entities/tools/waterTool', 'entities/log'], function(WaterTool, Log) {
 	var Character = me.ObjectEntity.extend({
 		init: function(x, y, settings) {
 			this.parent(x, y, settings);
 			this.setVelocity(3, 15);
 			this.updateColRect(10, 12, -1, 0);
-			this.waterTool = new WaterTool();
 
 			// This is for a little delay until anStill is being set
 			this.renderable.addAnimation('anStill', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5]);
@@ -18,21 +17,21 @@ define(['waterTool', 'entities/log'], function(WaterTool, Log) {
 			this.alwaysUpdate = true;
 		},
 		updateAnimation: function(){
-				if (this.vel.x != 0){
-					if (this.direction == 'right' && !this.renderable.isCurrentAnimation('anRight')) {
-						this.renderable.setCurrentAnimation('anRight');
-						this.flipX(false);
-					} else if (this.direction == 'left' && !this.renderable.isCurrentAnimation('anRight')) {
-						this.renderable.setCurrentAnimation('anRight');
-						this.flipX(true);
-					}
-				} else if (!this.renderable.isCurrentAnimation('anStill')) {
-					this.renderable.setCurrentAnimation('anStill');
+			if (this.vel.x != 0){
+				if (this.direction == 'right' && !this.renderable.isCurrentAnimation('anRight')) {
+					this.renderable.setCurrentAnimation('anRight');
+					this.flipX(false);
+				} else if (this.direction == 'left' && !this.renderable.isCurrentAnimation('anRight')) {
+					this.renderable.setCurrentAnimation('anRight');
+					this.flipX(true);
 				}
+			} else if (!this.renderable.isCurrentAnimation('anStill')) {
+				this.renderable.setCurrentAnimation('anStill');
+			}
 
-				if (this.jumping) {
-					this.renderable.setCurrentAnimation('anJump');
-				}
+			if (this.jumping) {
+				this.renderable.setCurrentAnimation('anJump');
+			}
 		},
 		update: function() {
 			if (this.isDead()) {
@@ -57,7 +56,7 @@ define(['waterTool', 'entities/log'], function(WaterTool, Log) {
 				}
 			}
 
-			if (me.input.isKeyPressed('waterTool')) {
+			if (me.input.isKeyPressed('waterTool') && this.waterTool) {
 				this.waterTool.use();
 			}
 
@@ -72,7 +71,11 @@ define(['waterTool', 'entities/log'], function(WaterTool, Log) {
 		handleCollisions: function() {
 			var res = this.collide();
 
-			if (res && res.obj instanceof Log) {
+			if (!res) {
+				return;
+			}
+
+			if (res.obj instanceof Log) {
 				this.pos.x -= res.x;
 				this.pos.y -= res.y;
 
@@ -81,6 +84,10 @@ define(['waterTool', 'entities/log'], function(WaterTool, Log) {
 					this.falling = false;
 					this.vel.y = 0;
 				}
+			}
+
+			if (res.obj instanceof WaterTool) {
+				this.waterTool = res.obj;
 			}
 		},
 		isDead: function() {
