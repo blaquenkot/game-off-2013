@@ -1,6 +1,4 @@
 define(['entities/tools/waterTool', 'entities/log'], function(WaterTool, Log) {
-	'use strict';
-
 	var Character = me.ObjectEntity.extend({
 		init: function(x, y, settings) {
 			this.parent(x, y, settings);
@@ -18,6 +16,18 @@ define(['entities/tools/waterTool', 'entities/log'], function(WaterTool, Log) {
 			// the death by water check can still be done.
 			this.alwaysUpdate = true;
 		},
+		updateSound: function() {
+			this.playing = this.playing === undefined ? false : this.playing;
+			if (this.vel.x != 0){
+				if (!this.playing && !this.jumping && !this.falling) {
+					var _this = this;
+					me.audio.play('step');
+					this.playing = true;
+					setTimeout(function(){_this.playing = false;}, 400);
+				}
+			}
+		},
+
 		updateAnimation: function(){
 			if (this.vel.x != 0){
 				if (this.direction == 'right' && !this.renderable.isCurrentAnimation('anRight')) {
@@ -62,6 +72,7 @@ define(['entities/tools/waterTool', 'entities/log'], function(WaterTool, Log) {
 				this.waterTool.use();
 			}
 
+			this.updateSound();
 			this.updateAnimation();
 			this.updateMovement();
 			this.parent();
