@@ -1,7 +1,7 @@
 define([], function() {
 	var Water = me.ColorLayer.extend({
 		init: function(level) {
-			this.parent('water', '#64B7A9', 2);
+			this.parent('water', '#64B7A9', 100);
 			this.alpha = 0.5;
 			this.level = level;
 			this.pos.x = 0;
