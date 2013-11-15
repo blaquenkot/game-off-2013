@@ -1,4 +1,6 @@
 define(['entities/tools/waterTool', 'entities/log'], function(WaterTool, Log) {
+	'use strict';
+
 	var Character = me.ObjectEntity.extend({
 		init: function(x, y, settings) {
 			this.parent(x, y, settings);

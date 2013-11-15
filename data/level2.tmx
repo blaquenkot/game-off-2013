@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="57" height="34" tilewidth="16" tileheight="16" backgroundcolor="#55aaff">
+ <properties>
+  <property name="tools" value="json:[&quot;water&quot;]"/>
+ </properties>
  <tileset firstgid="1" name="tile" tilewidth="16" tileheight="16">
   <image source="../assets/tile.png" width="128" height="128"/>
   <tile id="5">
@@ -49,11 +52,6 @@
     <property name="spriteheight" value="16"/>
     <property name="spritewidth" value="32"/>
    </properties>
-  </object>
- </objectgroup>
- <objectgroup name="waterTool" width="57" height="34">
-  <object name="waterTool" x="467" y="355" width="19" height="21">
-   <ellipse/>
   </object>
  </objectgroup>
  <layer name="collision" width="57" height="34">

@@ -1,5 +1,7 @@
 define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/log'],
 	function(resources, PlayState, Character, Water, WaterTool, Log) {
+		'use strict';
+
 		function Game() { }
 
 		Game.prototype.run = function() {

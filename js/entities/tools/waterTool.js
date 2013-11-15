@@ -1,7 +1,11 @@
 define(['entities/tool'], function(Tool) {
+	'use strict';
+
 	var WaterTool = Tool.extend({
 		init: function(x, y, settings) {
-			var settings = settings || {};
+			var x = x || 0,
+					y = y || 0,
+					settings = settings || {};
 			settings.image = 'waterTool';
 
 			this.parent(x, y, settings);
