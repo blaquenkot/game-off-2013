@@ -7,6 +7,7 @@ define([], function() {
 		{name: 'waterTool', type: 'image', src: '/game-off-2013/assets/watertool.png'},
 
 		// Maps
-		{name: 'testlevel', type: 'tmx', src: '/game-off-2013/data/testlevel.tmx'}
+		{name: 'level1', type: 'tmx', src: '/game-off-2013/data/level1.tmx'},
+		{name: 'level2', type: 'tmx', src: '/game-off-2013/data/level2.tmx'}
 	];
 });

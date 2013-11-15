@@ -1,5 +1,5 @@
-define(['resources', 'levels/test', 'character', 'water', 'entities/tools/waterTool', 'entities/log'],
-	function(resources, TestLevel, Character, Water, WaterTool, Log) {
+define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/log'],
+	function(resources, PlayState, Character, Water, WaterTool, Log) {
 		function Game() { }
 
 		Game.prototype.run = function() {
@@ -25,7 +25,7 @@ define(['resources', 'levels/test', 'character', 'water', 'entities/tools/waterT
 		};
 
 		Game.prototype.loaded = function() {
-			me.state.set(me.state.PLAY, new TestLevel());
+			me.state.set(me.state.PLAY, new PlayState());
 
 			me.entityPool.add('character', Character);
 			me.entityPool.add('log', Log);

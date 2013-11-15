@@ -35,7 +35,7 @@ define(['entities/tools/waterTool', 'entities/log'], function(WaterTool, Log) {
 		},
 		update: function() {
 			if (this.isDead()) {
-				me.state.current().reset();
+				me.levelDirector.reloadLevel();
 				return;
 			}
 
