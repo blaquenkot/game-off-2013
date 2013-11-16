@@ -38,10 +38,8 @@ define(['environment', 'water', 'entities/log', 'entities/tools/waterTool'],
 								tools = me.game.currentLevel.tools,
 								toolIndex,
 								toolName;
-
 						for (toolIndex = 0; toolIndex < tools.length; toolIndex++) {
 							var toolName = tools[toolIndex];
-
 							// Instantiate the tool and give it to the player
 							character[toolsMap[toolName].name] = new toolsMap[toolName].klass();
 						}
@@ -51,6 +49,10 @@ define(['environment', 'water', 'entities/log', 'entities/tools/waterTool'],
 			onResetEvent: function() { // Called when the state changes into this screen
 				this.environment = new Environment();
 				me.levelDirector.loadLevel('level1');
+				me.audio.playTrack('background', 0.7);
+			},
+			onDestroyEvent: function() {
+				me.audio.stopTrack();
 			},
 			waterHeight: function() {
 				return this.environment.waterLevel - this.baseHeight;

@@ -8,6 +8,12 @@ define([], function() {
 
 		// Maps
 		{name: 'level1', type: 'tmx', src: '/game-off-2013/data/level1.tmx'},
-		{name: 'level2', type: 'tmx', src: '/game-off-2013/data/level2.tmx'}
+		{name: 'level2', type: 'tmx', src: '/game-off-2013/data/level2.tmx'},
+
+		// Background Music
+		{name: "background", type: "audio", src: "/game-off-2013/data/music/", channel : 2},
+
+		// SFX
+		{name: "step", type: "audio", src: "/game-off-2013/data/sfx/", channel : 2}
 	];
 });
