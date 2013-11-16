@@ -19,17 +19,18 @@ define(['entities/tools/waterTool', 'entities/log', 'entities/glacier'], functio
 			this.alwaysUpdate = true;
 		},
 		updateSound: function() {
-			this.playing = this.playing === undefined ? false : this.playing;
+			var _this = this;
+
 			if (this.vel.x != 0){
 				if (!this.playing && !this.jumping && !this.falling) {
-					var _this = this;
-					me.audio.play('step');
 					this.playing = true;
-					setTimeout(function(){_this.playing = false;}, 400);
+
+					me.audio.play('step', false, function() {
+						_this.playing = false;
+					});
 				}
 			}
 		},
-
 		updateAnimation: function(){
 			if (this.vel.x != 0){
 				if (this.direction == 'right' && !this.renderable.isCurrentAnimation('anRight')) {

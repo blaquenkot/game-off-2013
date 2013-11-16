@@ -16,6 +16,9 @@ define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterT
 				});
 			}
 
+			// Initialize audio
+			me.audio.init("mp3,ogg");
+
 			// Callback when everything is loaded
 			me.loader.onload = this.loaded;
 
