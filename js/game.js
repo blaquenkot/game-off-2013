@@ -1,5 +1,5 @@
-define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/log'],
-	function(resources, PlayState, Character, Water, WaterTool, Log) {
+define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/log', 'entities/glacier'],
+	function(resources, PlayState, Character, Water, WaterTool, Log, Glacier) {
 		'use strict';
 
 		function Game() { }
@@ -31,6 +31,7 @@ define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterT
 
 			me.entityPool.add('character', Character);
 			me.entityPool.add('log', Log);
+			me.entityPool.add('glacier', Glacier);
 			me.entityPool.add('waterTool', WaterTool);
 			me.sys.gravity = 0.98;
 

@@ -46,11 +46,10 @@
   </object>
  </objectgroup>
  <objectgroup name="log" width="57" height="34">
-  <object name="log" x="684" y="523" width="65" height="18">
+  <object name="glacier" x="688" y="512" width="65" height="18">
    <properties>
-    <property name="image" value="log"/>
-    <property name="spriteheight" value="16"/>
-    <property name="spritewidth" value="32"/>
+    <property name="height" value="64"/>
+    <property name="width" value="64"/>
    </properties>
   </object>
  </objectgroup>

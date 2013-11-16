@@ -1,4 +1,4 @@
-define(['entities/tools/waterTool', 'entities/log'], function(WaterTool, Log) {
+define(['entities/tools/waterTool', 'entities/log', 'entities/glacier'], function(WaterTool, Log, Glacier) {
 	'use strict';
 
 	var Character = me.ObjectEntity.extend({
@@ -77,7 +77,7 @@ define(['entities/tools/waterTool', 'entities/log'], function(WaterTool, Log) {
 				return;
 			}
 
-			if (res.obj instanceof Log) {
+			if (res.obj instanceof Log || res.obj instanceof Glacier) {
 				this.pos.x -= res.x;
 				this.pos.y -= res.y;
 
