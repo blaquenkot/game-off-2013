@@ -42,6 +42,7 @@ define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterT
 			me.input.bindKey(me.input.KEY.RIGHT, 'right');
 			me.input.bindKey(me.input.KEY.UP, 'jump', true);
 			me.input.bindKey(me.input.KEY.A, 'waterTool');
+			me.input.bindKey(me.input.KEY.S, 'meltTool');
 
 			// Start the game.
 			me.state.change(me.state.PLAY);

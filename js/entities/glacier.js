@@ -19,10 +19,36 @@ define(['buoyant'], function(Buoyant) {
 
 			this.floatingFactor = 0.05;
 			this.renderable = new Ice();
-			this.anchorPoint = new me.Vector2d(0, 0);
-			this.updateColRect(0, settings.width, 0, settings.height);
+			this.anchorPoint = new me.Vector2d(0, 1);
+			this.updateColRect(0, settings.width, 1, settings.height);
 			this.renderable.width = settings.width;
 			this.renderable.height = settings.height;
+
+			this.baseHeight = settings.height;
+		},
+		draw: function(context) {
+			var melting = me.state.current().environment.iceMelting;
+
+			if (this.hasMelted()) {
+				return false;
+			}
+
+			this.renderable.height = melting > this.baseHeight ? 0 : this.baseHeight - melting;
+			this.height = this.renderable.height;
+			this.updateColRect(-1, undefined, 1, this.renderable.height);
+			this.parent(context);
+		},
+		hasMelted: function() {
+			return me.state.current().environment.iceMelting > this.baseHeight;
+		},
+		update: function() {
+			if (this.hasMelted()) {
+				me.game.remove(this);
+				return false;
+			}
+
+			this.parent();
+			return true;
 		}
 	});
 

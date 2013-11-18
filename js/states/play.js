@@ -1,11 +1,15 @@
-define(['environment', 'water', 'entities/log', 'entities/tools/waterTool'],
-	function(Environment, Water, Log, WaterTool) {
+define(['environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool'],
+	function(Environment, Water, Log, WaterTool, MeltTool) {
 		'use strict';
 
 		var toolsMap = {
 			water: {
 				name: 'waterTool',
 				klass: WaterTool
+			},
+			melt: {
+				name: 'meltTool',
+				klass: MeltTool
 			}
 		};
 
@@ -13,9 +17,14 @@ define(['environment', 'water', 'entities/log', 'entities/tools/waterTool'],
 			init: function() {
 				var _this = this;
 
+				// TODO: The event listeners should probably be somewhere else
 				me.event.subscribe('/tools/raiseWater', function() {
 					_this.environment.waterLevel += 1; // TODO: This could be received as a parameter
 					_this.water.updated = true;
+				});
+
+				me.event.subscribe('/tools/meltIce', function() {
+					_this.environment.iceMelting += 0.2; // TODO: This could be received as a parameter
 				});
 
 				me.game.onLevelLoaded = function(levelId) {
@@ -43,6 +52,8 @@ define(['environment', 'water', 'entities/log', 'entities/tools/waterTool'],
 							// Instantiate the tool and give it to the player
 							character[toolsMap[toolName].name] = new toolsMap[toolName].klass();
 						}
+
+						character.meltTool = new MeltTool();
 					}
 				};
 			},
