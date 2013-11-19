@@ -1,5 +1,5 @@
-define(['environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool'],
-	function(Environment, Water, Log, WaterTool, MeltTool) {
+define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool'],
+	function(StateManager, Environment, Water, Log, WaterTool, MeltTool) {
 		'use strict';
 
 		var toolsMap = {
@@ -40,6 +40,10 @@ define(['environment', 'water', 'entities/log', 'entities/tools/waterTool', 'ent
 					_this.baseHeight = 0;
 					_this.water = new Water(_this);
 					me.game.world.addChild(_this.water);
+
+					new StateManager(function() {
+						// add things that you want to check all the time here
+					});
 
 					if (me.game.currentLevel.tools) {
 						// Give the character the initial tools
