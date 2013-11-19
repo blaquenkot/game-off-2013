@@ -50,6 +50,17 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/log', '
 				}
 			},
 			update: function() {
+				_.each(me.game.currentLevel.getLayers(), function(layer) {
+ 				if (layer.ySpeed != undefined){
+ 					layer.anchorPoint = (0, 0.5);
+ 				}
+				});
+
+
+
+
+
+
 				if (this.isDead()) {
 					me.levelDirector.reloadLevel();
 					return;
