@@ -1,5 +1,5 @@
-define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/log', 'entities/glacier'],
-	function(resources, PlayState, Character, Water, WaterTool, Log, Glacier) {
+define(['resources', 'states/title', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/log', 'entities/glacier'],
+	function(resources, TitleState, PlayState, Character, Water, WaterTool, Log, Glacier) {
 		'use strict';
 
 		function Game() { }
@@ -30,6 +30,7 @@ define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterT
 		};
 
 		Game.prototype.loaded = function() {
+			me.state.set(me.state.MENU, new TitleState());
 			me.state.set(me.state.PLAY, new PlayState());
 
 			me.entityPool.add('character', Character);
@@ -45,7 +46,7 @@ define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterT
 			me.input.bindKey(me.input.KEY.S, 'meltTool');
 
 			// Start the game.
-			me.state.change(me.state.PLAY);
+			me.state.change(me.state.MENU);
 		};
 
 		return Game;
