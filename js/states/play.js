@@ -42,11 +42,17 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 					me.game.world.addChild(_this.water);
 
 					new StateManager(function() {
+						// Move the clouds
 						_.each(me.game.currentLevel.getLayers(), function(layer) {
 							if (layer.xSpeed != undefined){
 								layer.pos.x = layer.pos.x + layer.xSpeed * me.timer.tick;;
 							}
 						});
+
+						// Listen for the reset event
+						if (me.input.isKeyPressed('reset')) {
+							me.state.change(me.state.MENU);
+						}
 					});
 
 					if (me.game.currentLevel.tools) {
