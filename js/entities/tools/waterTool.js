@@ -3,9 +3,7 @@ define(['entities/tool'], function(Tool) {
 
 	var WaterTool = Tool.extend({
 		init: function(x, y, settings) {
-			var x = x || 0,
-					y = y || 0,
-					settings = settings || {};
+			var settings = settings || {};
 			settings.image = 'waterTool';
 
 			this.parent(x, y, settings);

@@ -1,5 +1,5 @@
-define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/log'],
-	function(resources, PlayState, Character, Water, WaterTool, Log) {
+define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/log', 'entities/glacier'],
+	function(resources, PlayState, Character, Water, WaterTool, Log, Glacier) {
 		'use strict';
 
 		function Game() { }
@@ -16,6 +16,9 @@ define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterT
 				});
 			}
 
+			// Initialize audio
+			me.audio.init("mp3,ogg");
+
 			// Callback when everything is loaded
 			me.loader.onload = this.loaded;
 
@@ -31,6 +34,7 @@ define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterT
 
 			me.entityPool.add('character', Character);
 			me.entityPool.add('log', Log);
+			me.entityPool.add('glacier', Glacier);
 			me.entityPool.add('waterTool', WaterTool);
 			me.sys.gravity = 0.98;
 
@@ -38,6 +42,7 @@ define(['resources', 'states/play', 'character', 'water', 'entities/tools/waterT
 			me.input.bindKey(me.input.KEY.RIGHT, 'right');
 			me.input.bindKey(me.input.KEY.UP, 'jump', true);
 			me.input.bindKey(me.input.KEY.A, 'waterTool');
+			me.input.bindKey(me.input.KEY.S, 'meltTool');
 
 			// Start the game.
 			me.state.change(me.state.PLAY);

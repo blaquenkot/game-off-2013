@@ -1,7 +1,9 @@
 define(['buoyant'], function(Buoyant) {
+	'use strict';
+
 	var Log = Buoyant.extend({
 		init: function(x, y, settings) {
-			settings = settings || {};
+			var settings = settings || {};
 
 			settings.image = 'log';
 			this.parent(x, y, settings);
