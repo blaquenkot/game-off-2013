@@ -24,7 +24,7 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 				});
 
 				me.event.subscribe('/tools/meltIce', function() {
-					_this.environment.iceMelting += 0.2; // TODO: This could be received as a parameter
+					_this.environment.iceMelting += 0.6 ; // TODO: This could be received as a parameter
 				});
 
 				me.game.onLevelLoaded = function(levelId) {
@@ -60,8 +60,6 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 							// Instantiate the tool and give it to the player
 							character[toolsMap[toolName].name] = new toolsMap[toolName].klass();
 						}
-
-						character.meltTool = new MeltTool();
 					}
 				};
 			},
