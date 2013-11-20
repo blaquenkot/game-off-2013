@@ -61,7 +61,7 @@
   </data>
  </layer>
  <objectgroup name="character" width="57" height="34">
-  <object name="character" x="16" y="416" width="17" height="33">
+  <object name="character" x="3" y="423" width="17" height="33">
    <properties>
     <property name="image" value="pjtile"/>
     <property name="spriteheight" value="46"/>

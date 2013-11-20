@@ -6,7 +6,7 @@ define(['entities/tool'], function(Tool) {
 			var x = x || 0,
 					y = y || 0,
 					settings = settings || {};
-			settings.image = 'waterTool'; // TODO: Change to meltTool
+			settings.image = 'meltTool';
 
 			this.parent(x, y, settings);
 			this.z = 1000;
