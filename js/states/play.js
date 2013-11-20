@@ -38,15 +38,21 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 					}
 
 					_this.baseHeight = 0;
-					_this.water = new Water(_this);
+					_this.water = new Water();
 					me.game.world.addChild(_this.water);
 
 					new StateManager(function() {
+						// Move the clouds
 						_.each(me.game.currentLevel.getLayers(), function(layer) {
 							if (layer.xSpeed != undefined){
 								layer.pos.x = layer.pos.x + layer.xSpeed * me.timer.tick;;
 							}
 						});
+
+						// Listen for the reset event
+						if (me.input.isKeyPressed('reset')) {
+							me.state.change(me.state.MENU);
+						}
 					});
 
 					if (me.game.currentLevel.tools) {
@@ -70,9 +76,6 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 			},
 			onDestroyEvent: function() {
 				me.audio.stopTrack();
-			},
-			waterHeight: function() {
-				return this.environment.waterLevel - this.baseHeight;
 			}
 		});
 

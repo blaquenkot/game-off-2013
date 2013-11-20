@@ -46,6 +46,8 @@ define(['resources', 'states/title', 'states/play', 'character', 'water', 'entit
 			me.input.bindKey(me.input.KEY.A, 'waterTool');
 			me.input.bindKey(me.input.KEY.S, 'meltTool');
 
+			me.input.bindKey(me.input.KEY.NUM0, 'reset');
+
 			// Start the game.
 			me.state.change(me.state.MENU);
 		};
