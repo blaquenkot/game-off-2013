@@ -38,7 +38,7 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 					}
 
 					_this.baseHeight = 0;
-					_this.water = new Water(_this);
+					_this.water = new Water();
 					me.game.world.addChild(_this.water);
 
 					new StateManager(function() {
@@ -72,9 +72,6 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 			},
 			onDestroyEvent: function() {
 				me.audio.stopTrack();
-			},
-			waterHeight: function() {
-				return this.environment.waterLevel - this.baseHeight;
 			}
 		});
 
