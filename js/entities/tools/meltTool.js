@@ -12,7 +12,7 @@ define(['entities/tool'], function(Tool) {
 			this.z = 1000;
 		},
 		use: function() {
-      me.event.publish('/tools/meltIce');
+			me.event.publish('/tools/meltIce');
 		}
 	});
 

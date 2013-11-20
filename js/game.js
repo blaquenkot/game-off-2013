@@ -1,5 +1,5 @@
-define(['resources', 'states/title', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/log', 'entities/glacier'],
-	function(resources, TitleState, PlayState, Character, Water, WaterTool, MeltTool, Log, Glacier) {
+define(['resources', 'states/title', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier'],
+	function(resources, TitleState, PlayState, Character, Water, WaterTool, MeltTool, PoisonTool, Log, Glacier) {
 		'use strict';
 
 		function Game() { }
@@ -37,7 +37,8 @@ define(['resources', 'states/title', 'states/play', 'character', 'water', 'entit
 			me.entityPool.add('log', Log);
 			me.entityPool.add('glacier', Glacier);
 			me.entityPool.add('waterTool', WaterTool);
-            me.entityPool.add('meltTool', MeltTool);
+			me.entityPool.add('meltTool', MeltTool);
+			me.entityPool.add('poisonTool', PoisonTool);
 			me.sys.gravity = 0.98;
 
 			me.input.bindKey(me.input.KEY.LEFT, 'left');
@@ -45,6 +46,7 @@ define(['resources', 'states/title', 'states/play', 'character', 'water', 'entit
 			me.input.bindKey(me.input.KEY.UP, 'jump', true);
 			me.input.bindKey(me.input.KEY.A, 'waterTool');
 			me.input.bindKey(me.input.KEY.S, 'meltTool');
+			me.input.bindKey(me.input.KEY.D, 'poisonTool');
 
 			me.input.bindKey(me.input.KEY.NUM0, 'reset');
 

@@ -10,7 +10,7 @@ define(['entities/tool'], function(Tool) {
 			this.z = 1000;
 		},
 		use: function() {
-      me.event.publish('/tools/raiseWater');
+			me.event.publish('/tools/raiseWater');
 		}
 	});
 

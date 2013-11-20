@@ -1,5 +1,5 @@
-define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/log', 'entities/glacier'],
-	function(WaterTool, MeltTool, Log, Glacier) {
+define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier'],
+	function(WaterTool, MeltTool, PoisonTool, Log, Glacier) {
 		'use strict';
 
 		var Character = me.ObjectEntity.extend({
@@ -18,6 +18,7 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/log', '
 				// We need it so when the character falls too quickly,
 				// the death by water check can still be done.
 				this.alwaysUpdate = true;
+				this.tools = [];
 			},
 			updateSound: function() {
 				var _this = this;
@@ -80,6 +81,10 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/log', '
 					this.meltTool.use();
 				}
 
+				if (me.input.isKeyPressed('poisonTool') && this.poisonTool) {
+					this.poisonTool.use();
+				}
+
 				this.updateSound();
 				this.updateAnimation();
 				this.updateMovement();
@@ -110,10 +115,20 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/log', '
 				// TODO: Unify these if possible (`instanceof Tool`)
 				if (res.obj instanceof WaterTool) {
 					this.waterTool = res.obj;
+					this.waterTool.character = this;
+					this.tools.push(this.waterTool);
 				}
 
 				if (res.obj instanceof MeltTool) {
 					this.meltTool = res.obj;
+					this.meltTool.character = this;
+					this.tools.push(this.meltTool);
+				}
+
+				if (res.obj instanceof PoisonTool) {
+					this.poisonTool = res.obj;
+					this.poisonTool.character = this;
+					this.tools.push(this.poisonTool);
 				}
 			},
 			isDead: function() {
@@ -123,6 +138,17 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/log', '
 				if (me.state.current().water.isOver(this)) {
 					return true;
 				}
+			},
+			center: function() {
+				return {
+					x: this.pos.x + this.width / 2,
+					y: this.pos.y + this.height / 2
+				};
+			},
+			onDestroyEvent: function() {
+				_.each(this.tools, function(tool) {
+					tool.stop();
+				});
 			}
 		});
 

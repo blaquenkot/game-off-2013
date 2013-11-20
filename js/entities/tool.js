@@ -12,7 +12,8 @@ define([], function() {
 			this.updateMovement();
 			this.parent();
 			return true;
-		}
+		},
+		stop: function() {}
 	});
 
 	return Tool

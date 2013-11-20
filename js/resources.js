@@ -5,7 +5,9 @@ define([], function() {
 		{name: 'pjTile', type: 'image', src: '/game-off-2013/assets/pjtile.png'},
 		{name: 'log', type: 'image', src: '/game-off-2013/assets/log.png'},
 		{name: 'waterTool', type: 'image', src: '/game-off-2013/assets/watertool.png'},
-    {name: 'meltTool', type: 'image', src: '/game-off-2013/assets/melttool.png'},
+		{name: 'meltTool', type: 'image', src: '/game-off-2013/assets/melttool.png'},
+		{name: 'poisonTool', type: 'image', src: '/game-off-2013/assets/poisontool.png'},
+		{name: 'poisonBlast', type: 'image', src: '/game-off-2013/assets/blast.png'},
 
 		// Background
 		{name: 'sky', type: 'image', src: '/game-off-2013/assets/sky.png'},
@@ -16,7 +18,7 @@ define([], function() {
 		// Maps
 		{name: 'level1', type: 'tmx', src: '/game-off-2013/data/level1.tmx'},
 		{name: 'level2', type: 'tmx', src: '/game-off-2013/data/level2.tmx'},
-    {name: 'level3', type: 'tmx', src: '/game-off-2013/data/level3.tmx'},   
+    {name: 'level3', type: 'tmx', src: '/game-off-2013/data/level3.tmx'},
     {name: 'level4', type: 'tmx', src: '/game-off-2013/data/level4.tmx'},
     {name: 'level5', type: 'tmx', src: '/game-off-2013/data/level5.tmx'},
     {name: 'level6', type: 'tmx', src: '/game-off-2013/data/level6.tmx'},
