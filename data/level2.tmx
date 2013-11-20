@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="57" height="34" tilewidth="16" tileheight="16" backgroundcolor="#55aaff">
  <properties>
+  <property name="baseHeight" value="40"/>
   <property name="tools" value="json:[&quot;water&quot;]"/>
  </properties>
  <tileset firstgid="1" name="tile" tilewidth="16" tileheight="16">
@@ -61,7 +62,7 @@
   </data>
  </layer>
  <objectgroup name="character" width="57" height="34">
-  <object name="character" x="3" y="423" width="17" height="33">
+  <object name="character" x="4" y="411" width="17" height="33">
    <properties>
     <property name="image" value="pjtile"/>
     <property name="spriteheight" value="46"/>
@@ -86,7 +87,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000"/>
-    <property name="to" value="level2"/>
+    <property name="to" value="level3"/>
    </properties>
   </object>
  </objectgroup>
