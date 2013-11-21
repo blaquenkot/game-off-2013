@@ -39,6 +39,9 @@
  </imagelayer>
  <imagelayer name="fog" width="57" height="34">
   <image source="../assets/fog.png"/>
+  <properties>
+   <property name="xSpeed" value="1"/>
+  </properties>
  </imagelayer>
  <imagelayer name="clouds" width="57" height="34">
   <image source="../assets/clouds.png"/>

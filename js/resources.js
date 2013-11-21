@@ -20,6 +20,8 @@ define([], function() {
 		{name: 'level2', type: 'tmx', src: '/game-off-2013/data/level2.tmx'},
     {name: 'level3', type: 'tmx', src: '/game-off-2013/data/level3.tmx'},   
     {name: 'level4', type: 'tmx', src: '/game-off-2013/data/level4.tmx'},
+    {name: 'level5', type: 'tmx', src: '/game-off-2013/data/level5.tmx'},
+    {name: 'level6', type: 'tmx', src: '/game-off-2013/data/level6.tmx'},
 
 		// Background Music
 		{name: "background", type: "audio", src: "/game-off-2013/data/music/", channel : 2},
