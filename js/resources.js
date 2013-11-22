@@ -7,11 +7,9 @@ define([], function() {
 		{name: 'waterTool', type: 'image', src: '/game-off-2013/assets/watertool.png'},
     {name: 'meltTool', type: 'image', src: '/game-off-2013/assets/melttool.png'},
 
-
 		// Background
 		{name: 'sky', type: 'image', src: '/game-off-2013/assets/sky.png'},
 		{name: 'ground', type: 'image', src: '/game-off-2013/assets/ground.png'},
-		{name: 'fog', type: 'image', src: '/game-off-2013/assets/fog.png'},
 		{name: 'clouds', type: 'image', src: '/game-off-2013/assets/clouds.png'},
 		{name: 'sun', type: 'image', src: '/game-off-2013/assets/sun.png'},
 
