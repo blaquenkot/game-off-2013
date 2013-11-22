@@ -43,11 +43,8 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 
 					new StateManager(function() {
 						// Move the clouds
-						_.each(me.game.currentLevel.getLayers(), function(layer) {
-							if (layer.xSpeed != undefined){
-								layer.pos.x = layer.pos.x + layer.xSpeed * me.timer.tick;;
-							}
-						});
+						var layer = me.game.currentLevel.getLayers()[3]
+						layer.pos.x = layer.pos.x + layer.xSpeed * me.timer.tick;;
 
 						// Listen for the reset event
 						if (me.input.isKeyPressed('reset')) {
@@ -70,7 +67,7 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 				};
 			},
 			onResetEvent: function() { // Called when the state changes into this screen
-				this.environment = new Environment();
+               	this.environment = new Environment();
 				me.levelDirector.loadLevel('level1');
 				me.audio.playTrack('background', 0.7);
 			},

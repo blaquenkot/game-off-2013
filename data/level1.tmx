@@ -37,9 +37,6 @@
  <imagelayer name="ground" width="57" height="34">
   <image source="../assets/ground.png"/>
  </imagelayer>
- <imagelayer name="fog" width="57" height="34">
-  <image source="../assets/fog.png"/>
- </imagelayer>
  <imagelayer name="clouds" width="57" height="34">
   <image source="../assets/clouds.png"/>
   <properties>
