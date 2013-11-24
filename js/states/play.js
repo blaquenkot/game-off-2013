@@ -17,6 +17,10 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 			}
 		};
 
+		function allIceMelted() {
+			return me.game.world.getEntityByProp('name', 'glacier').length === 0;
+		}
+
 		var Play = me.ScreenObject.extend({
 			init: function() {
 				var _this = this;
@@ -29,7 +33,9 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 
 				me.event.subscribe('/tools/meltIce', function(melt) {
 					_this.environment.iceMelting += melt || 0.6;
-					me.event.publish('/tools/raiseWater', [0.2]);
+					if (!allIceMelted()) {
+						me.event.publish('/tools/raiseWater', [0.2]);
+					}
 				});
 
 				me.game.onLevelLoaded = function(levelId) {
