@@ -1,5 +1,5 @@
-define(['resources', 'states/title', 'states/play', 'character', 'water', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier'],
-	function(resources, TitleState, PlayState, Character, Water, WaterTool, MeltTool, PoisonTool, Log, Glacier) {
+define(['resources', 'states/title', 'states/play', 'character', 'entities/enemy', 'water', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier'],
+	function(resources, TitleState, PlayState, Character, Enemy, Water, WaterTool, MeltTool, PoisonTool, Log, Glacier) {
 		'use strict';
 
 		function Game() { }
@@ -34,6 +34,7 @@ define(['resources', 'states/title', 'states/play', 'character', 'water', 'entit
 			me.state.set(me.state.PLAY, new PlayState());
 
 			me.entityPool.add('character', Character);
+			me.entityPool.add('enemy', Enemy);
 			me.entityPool.add('log', Log);
 			me.entityPool.add('glacier', Glacier);
 			me.entityPool.add('waterTool', WaterTool);

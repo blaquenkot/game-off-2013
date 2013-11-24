@@ -132,6 +132,14 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				if (me.state.current().water.isOver(this)) {
 					return true;
 				}
+
+				// collides with enemy
+				var res = this.collide();
+				if (res && res.obj.type === me.game.ENEMY_OBJECT) {
+					return true;
+				}
+
+				return false;
 			},
 			center: function() {
 				return {

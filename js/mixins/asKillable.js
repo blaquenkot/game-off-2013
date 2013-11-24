@@ -4,7 +4,7 @@ define([], function() {
 
 		this.update = function() {
 			if (me.game.currentLevel.blast && me.game.currentLevel.blast.caughtInExplosion(this)) {
-				console.log('caught in explosion', this);
+				me.game.remove(this);
 			}
 
 			if (oldUpdate) {

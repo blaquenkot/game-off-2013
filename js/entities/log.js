@@ -13,7 +13,5 @@ define(['buoyant', 'mixins/asKillable'], function(Buoyant, asKillable) {
 		}
 	});
 
-	asKillable.call(Log.prototype);
-
 	return Log;
 });
