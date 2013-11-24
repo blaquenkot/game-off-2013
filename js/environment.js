@@ -11,5 +11,9 @@ define([], function() {
 		return this.waterLevel - (me.game.currentLevel.baseHeight || 0);
 	};
 
+	Environment.prototype.reduceYears = function(years) {
+		this.yearsLeft -= years;
+	};
+
 	return Environment;
 });

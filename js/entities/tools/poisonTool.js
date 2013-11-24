@@ -81,6 +81,7 @@ define(['entities/tool'], function(Tool) {
 			});
 
 			me.game.world.addChild(this.blast);
+			me.event.publish('/tools/poisonBlast');
 		},
 		stop: function() {
 			if (this.inUse) {

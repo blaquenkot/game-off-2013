@@ -1,5 +1,5 @@
-define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool'],
-	function(StateManager, Environment, Water, Log, WaterTool, MeltTool, PoisonTool) {
+define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool'],
+	function(Hud, StateManager, Environment, Water, Log, WaterTool, MeltTool, PoisonTool) {
 		'use strict';
 
 		var toolsMap = {
@@ -29,13 +29,19 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 				me.event.subscribe('/tools/raiseWater', function(change) {
 					_this.environment.waterLevel += change || 1;
 					_this.water.updated = true;
+					_this.environment.reduceYears(1);
 				});
 
 				me.event.subscribe('/tools/meltIce', function(melt) {
 					_this.environment.iceMelting += melt || 0.6;
+					_this.environment.reduceYears(1);
 					if (!allIceMelted()) {
 						me.event.publish('/tools/raiseWater', [0.2]);
 					}
+				});
+
+				me.event.subscribe('/tools/poisonBlast', function() {
+					_this.environment.reduceYears(10);
 				});
 
 				me.game.onLevelLoaded = function(levelId) {
@@ -79,10 +85,13 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 			},
 			onResetEvent: function() { // Called when the state changes into this screen
 				this.environment = new Environment();
+				this.hud = new Hud.Container();
+				me.game.add(this.hud);
 				me.levelDirector.loadLevel('level1');
 				me.audio.playTrack('background', 0.7);
 			},
 			onDestroyEvent: function() {
+				me.game.world.removeChild(this.hud);
 				me.audio.stopTrack();
 			}
 		});

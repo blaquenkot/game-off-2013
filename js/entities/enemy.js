@@ -20,8 +20,6 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 
 			this.startX = x;
 			this.endX = x + settings.width - settings.spritewidth;
-
-			// this.pos.x = x + settings.width - settings.spritewidth;
 		},
 		update: function() {
 			// Check if it should change direction
