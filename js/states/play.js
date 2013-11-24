@@ -1,5 +1,5 @@
-define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool'],
-	function(StateManager, Environment, Water, Log, WaterTool, MeltTool) {
+define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool'],
+	function(StateManager, Environment, Water, Log, WaterTool, MeltTool, PoisonTool) {
 		'use strict';
 
 		var toolsMap = {
@@ -10,6 +10,10 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 			melt: {
 				name: 'meltTool',
 				klass: MeltTool
+			},
+			poison: {
+				name: 'poisonTool',
+				klass: PoisonTool
 			}
 		};
 
@@ -59,10 +63,10 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 								tools = me.game.currentLevel.tools,
 								toolIndex,
 								toolName;
+
 						for (toolIndex = 0; toolIndex < tools.length; toolIndex++) {
 							var toolName = tools[toolIndex];
-							// Instantiate the tool and give it to the player
-							character[toolsMap[toolName].name] = new toolsMap[toolName].klass();
+							character.addTool(toolName, new toolsMap[toolName].klass());
 						}
 					}
 				};

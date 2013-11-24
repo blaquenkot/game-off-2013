@@ -114,21 +114,15 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 
 				// TODO: Unify these if possible (`instanceof Tool`)
 				if (res.obj instanceof WaterTool) {
-					this.waterTool = res.obj;
-					this.waterTool.character = this;
-					this.tools.push(this.waterTool);
+					this.addTool('water', res.obj);
 				}
 
 				if (res.obj instanceof MeltTool) {
-					this.meltTool = res.obj;
-					this.meltTool.character = this;
-					this.tools.push(this.meltTool);
+					this.addTool('melt', res.obj);
 				}
 
 				if (res.obj instanceof PoisonTool) {
-					this.poisonTool = res.obj;
-					this.poisonTool.character = this;
-					this.tools.push(this.poisonTool);
+					this.addTool('poison', res.obj);
 				}
 			},
 			isDead: function() {
@@ -149,6 +143,11 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				_.each(this.tools, function(tool) {
 					tool.stop();
 				});
+			},
+			addTool: function(name, tool) {
+				this[name + 'Tool'] = tool;
+				tool.character = this;
+				this.tools.push(tool);
 			}
 		});
 

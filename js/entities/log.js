@@ -1,4 +1,4 @@
-define(['buoyant'], function(Buoyant) {
+define(['buoyant', 'mixins/asKillable'], function(Buoyant, asKillable) {
 	'use strict';
 
 	var Log = Buoyant.extend({
@@ -10,15 +10,10 @@ define(['buoyant'], function(Buoyant) {
 
 			this.anchorPoint = new me.Vector2d(0, 0);
 			this.updateColRect(0, this.renderable.width, 0, this.renderable.height);
-		},
-		update: function() { // TMP: just to check collision with blast
-			if (me.game.currentLevel.blast && me.game.currentLevel.blast.caughtInExplosion(this)) {
-				console.log('caught in explosion', this);
-			}
-
-			return this.parent();
 		}
 	});
+
+	asKillable.call(Log.prototype);
 
 	return Log;
 });
