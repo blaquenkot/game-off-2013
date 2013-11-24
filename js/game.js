@@ -14,6 +14,7 @@ define(['resources', 'states/title', 'states/play', 'character', 'entities/enemy
 				window.onReady(function () {
 					me.plugin.register.defer(debugPanel, "debug");
 				});
+				me.audio.disable();
 			}
 
 			// Initialize audio
