@@ -22,7 +22,7 @@ define(['entities/tool'], function(Tool) {
 			this.parent(x, y, settings);
 			this.z = 6;
 
-			this.renderable.scaleFlag = 1;
+			this.renderable.scaleFlag = true;
 
 			explosionTween = new me.Tween(this.renderable.scale)
 				.to({x: this.radiusScale, y: this.radiusScale}, this.duration);
