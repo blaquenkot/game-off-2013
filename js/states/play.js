@@ -18,13 +18,14 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 				var _this = this;
 
 				// TODO: The event listeners should probably be somewhere else
-				me.event.subscribe('/tools/raiseWater', function() {
-					_this.environment.waterLevel += 1; // TODO: This could be received as a parameter
+				me.event.subscribe('/tools/raiseWater', function(change) {
+					_this.environment.waterLevel += change || 1;
 					_this.water.updated = true;
 				});
 
-				me.event.subscribe('/tools/meltIce', function() {
-					_this.environment.iceMelting += 0.6 ; // TODO: This could be received as a parameter
+				me.event.subscribe('/tools/meltIce', function(melt) {
+					_this.environment.iceMelting += melt || 0.6;
+					me.event.publish('/tools/raiseWater', [0.2]);
 				});
 
 				me.game.onLevelLoaded = function(levelId) {
@@ -67,7 +68,7 @@ define(['stateManager', 'environment', 'water', 'entities/log', 'entities/tools/
 				};
 			},
 			onResetEvent: function() { // Called when the state changes into this screen
-               	this.environment = new Environment();
+				this.environment = new Environment();
 				me.levelDirector.loadLevel('level1');
 				me.audio.playTrack('background', 0.7);
 			},
