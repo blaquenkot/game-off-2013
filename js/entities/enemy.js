@@ -1,4 +1,4 @@
-define(['mixins/asKillable'], function(asKillable) {
+define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrownable) {
 	'use strict';
 
 	// We can eventually make this more generic if we have several types of enemies
@@ -41,6 +41,7 @@ define(['mixins/asKillable'], function(asKillable) {
 	});
 
 	asKillable.call(Enemy.prototype);
+	asDrownable.call(Enemy.prototype);
 
 	return Enemy;
 })
