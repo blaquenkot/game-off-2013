@@ -19,6 +19,27 @@ define([], function() {
 		}
 	});
 
+	var WaterLevel = me.Renderable.extend({
+		init: function(x, y) {
+			this.parent(new me.Vector2d(x, y), 10, 10);
+			this.waterLevel = -1;
+			this.floating = true;
+			this.font = new me.Font('VT323', 20, '#000', 'right');
+		},
+		update: function() {
+			if (this.waterLevel !== me.state.current().environment.waterLevel) {
+				this.waterLevel = me.state.current().environment.waterLevel;
+				return true;
+			}
+
+			return false;
+		},
+		draw: function(context) {
+			var meters = this.waterLevel / (46 / 1.7); // The character is 46 pixels tall, assume that's 1.70m
+			this.font.draw(context, 'Water level: ' + meters.toFixed(2) + ' meters', this.pos.x, this.pos.y);
+		}
+	});
+
 	var Hud = {
 		Container: me.ObjectContainer.extend({
 			init: function() {
@@ -28,6 +49,7 @@ define([], function() {
 				this.z = Infinity;
 				this.name = 'HUD';
 				this.addChild(new YearsLeft(me.game.world.width / 2, 10));
+				this.addChild(new WaterLevel(me.game.world.width - 10, 10));
 			}
 		})
 	};
