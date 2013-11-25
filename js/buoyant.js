@@ -20,9 +20,13 @@ define([], function() {
 			}
 
 			this.updateMovement();
-			this.parent();
 
-			return true;
+			if (this.vel.x!=0 || this.vel.y!=0) {
+				this.parent();
+				return true;
+			}
+
+			return false;
 		}
 	});
 

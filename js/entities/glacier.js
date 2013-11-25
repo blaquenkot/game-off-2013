@@ -26,18 +26,6 @@ define(['buoyant'], function(Buoyant) {
 
 			this.baseHeight = settings.height;
 		},
-		draw: function(context) {
-			var melting = me.state.current().environment.iceMelting;
-
-			if (this.hasMelted()) {
-				return false;
-			}
-
-			this.renderable.height = melting > this.baseHeight ? 0 : this.baseHeight - melting;
-			this.height = this.renderable.height;
-			this.updateColRect(-1, undefined, 1, this.renderable.height);
-			this.parent(context);
-		},
 		hasMelted: function() {
 			return me.state.current().environment.iceMelting > this.baseHeight;
 		},
@@ -47,8 +35,17 @@ define(['buoyant'], function(Buoyant) {
 				return false;
 			}
 
-			this.parent();
-			return true;
+			var melting = me.state.current().environment.iceMelting;
+
+			if (this.hasMelted()) {
+				return false;
+			}
+
+			this.renderable.height = melting > this.baseHeight ? 0 : this.baseHeight - melting;
+			this.height = this.renderable.height;
+			this.updateColRect(-1, undefined, 1, this.renderable.height);
+
+			return this.parent();
 		}
 	});
 

@@ -86,13 +86,16 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				}
 
 				this.updateSound();
-				this.updateAnimation();
 				this.updateMovement();
-				this.parent();
-
+				this.updateAnimation();
 				this.handleCollisions();
 
-				return true;
+				if (this.vel.x!=0 || this.vel.y!=0) {
+					this.parent();
+					return true;
+				}
+
+				return false;
 			},
 			handleCollisions: function() {
 				var res = this.collide();

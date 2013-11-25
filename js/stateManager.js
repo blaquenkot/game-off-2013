@@ -6,7 +6,7 @@ define([], function() {
 			me.game.world.addChild(this);
 		},
 		update: function() {
-			this.updateCallback();
+			return this.updateCallback();
 		}
 	});
 

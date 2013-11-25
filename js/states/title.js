@@ -15,7 +15,7 @@ define([], function() {
 			if (me.input.isKeyPressed('enter')) {
 				me.state.change(me.state.PLAY);
 			}
-			return true;
+			return false;
 		},
 		draw: function(context) {
 			// Of course, the following is all temporary
