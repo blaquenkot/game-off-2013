@@ -63,6 +63,10 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 					_this.environment.reduceYears(10);
 				});
 
+				me.event.subscribe('/environment/noMoreYears', function() {
+					me.state.change(me.state.GAMEOVER);
+				});
+
 				me.game.onLevelLoaded = function(levelId) {
 					if (_this.levelId != levelId) {
 						// we changed levels, save the starting environment

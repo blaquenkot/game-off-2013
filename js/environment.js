@@ -15,6 +15,10 @@ define([], function() {
 
 	Environment.prototype.reduceYears = function(years) {
 		this.yearsLeft -= years;
+
+		if (this.yearsLeft <= 0) {
+			me.event.publish('/environment/noMoreYears');
+		}
 	};
 
 	return Environment;
