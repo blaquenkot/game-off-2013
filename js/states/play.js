@@ -17,6 +17,25 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 			}
 		};
 
+		var DeadOverlay = me.ColorLayer.extend({
+			init: function(state) {
+				this.parent('deadOverlay', '#C00', Infinity);
+				this.state = state;
+				this.alpha = 0;
+			},
+			update: function() {
+				if (this.alpha >= DeadOverlay.MAX_ALPHA) {
+					return false;
+				}
+
+				this.alpha = (Environment.MAX_YEARS - this.state.environment.yearsLeft) / Environment.MAX_YEARS * DeadOverlay.MAX_ALPHA;
+				this.parent();
+				return true;
+			}
+		});
+
+		DeadOverlay.MAX_ALPHA = 0.6;
+
 		function allIceMelted() {
 			return me.game.world.getEntityByProp('name', 'glacier').length === 0;
 		}
@@ -56,7 +75,9 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 
 					_this.baseHeight = 0;
 					_this.water = new Water();
+					_this.overlay = new DeadOverlay(_this);
 					me.game.world.addChild(_this.water);
+					me.game.world.addChild(_this.overlay);
 
 					new StateManager(function() {
 						// Move the clouds

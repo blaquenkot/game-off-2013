@@ -4,8 +4,10 @@ define([], function() {
 
 		this.waterLevel = 10;
 		this.iceMelting = 0;
-		this.yearsLeft = 10000;
+		this.yearsLeft = Environment.MAX_YEARS;
 	}
+
+	Environment.MAX_YEARS = 1000;
 
 	Environment.prototype.waterHeight = function() {
 		return this.waterLevel - (me.game.currentLevel.baseHeight || 0);
