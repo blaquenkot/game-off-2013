@@ -21,7 +21,8 @@ define([], function() {
 			// Of course, the following is all temporary
 			context.fillStyle = '#000';
 			context.fillRect(0, 0, me.game.world.width, me.game.world.height);
-			this.font.draw(context, 'Ccccccchanges', me.game.world.width / 2, me.game.world.height / 2);
+			this.font.draw(context, 'Ccccccchanges', me.game.world.width / 2, me.game.world.height / 2 - 20);
+			this.font.draw(context, 'Press Enter to start', me.game.world.width / 2, me.game.world.height / 2 + 20);
 		},
 		onDestroyEvent: function() {
 			me.input.unbindKey(me.input.KEY.ENTER);
