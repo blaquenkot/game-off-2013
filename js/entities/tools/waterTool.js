@@ -8,7 +8,7 @@ define(['entities/tool'], function(Tool) {
 
 			this.parent(x, y, settings);
 			this.z = 1000;
-			this.key = 'A';
+			this.key = '1';
 		},
 		use: function() {
 			me.event.publish('/tools/raiseWater');

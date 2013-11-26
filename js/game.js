@@ -47,9 +47,9 @@ define(['resources', 'states/title', 'states/play', 'states/gameover', 'characte
 			me.input.bindKey(me.input.KEY.LEFT, 'left');
 			me.input.bindKey(me.input.KEY.RIGHT, 'right');
 			me.input.bindKey(me.input.KEY.UP, 'jump', true);
-			me.input.bindKey(me.input.KEY.A, 'waterTool');
-			me.input.bindKey(me.input.KEY.S, 'meltTool');
-			me.input.bindKey(me.input.KEY.D, 'poisonTool');
+			me.input.bindKey(me.input.KEY.NUM1, 'waterTool');
+			me.input.bindKey(me.input.KEY.NUM2, 'meltTool');
+			me.input.bindKey(me.input.KEY.NUM3, 'poisonTool');
 
 			me.input.bindKey(me.input.KEY.NUM0, 'reset');
 
