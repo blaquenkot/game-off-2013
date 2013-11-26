@@ -2,7 +2,7 @@
 <map version="1.0" orientation="orthogonal" width="57" height="34" tilewidth="16" tileheight="16" backgroundcolor="#55aaff">
  <properties>
   <property name="baseHeight" value="40"/>
-  <property name="tools" value="json:[&quot;water&quot;, &quot;poison&quot;]"/>
+  <property name="tools" value="json:[&quot;water&quot;]"/>
  </properties>
  <tileset firstgid="1" name="tile" tilewidth="16" tileheight="16">
   <image source="../assets/tile.png" width="128" height="128"/>
@@ -60,9 +60,6 @@
     <property name="spritewidth" value="32"/>
    </properties>
   </object>
- </objectgroup>
- <objectgroup name="Enemy" width="57" height="34">
-  <object name="enemy" x="192" y="480" width="496" height="48"/>
  </objectgroup>
  <objectgroup name="me.LevelEntity" width="57" height="34">
   <properties>
