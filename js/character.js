@@ -1,5 +1,5 @@
-define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier'],
-	function(WaterTool, MeltTool, PoisonTool, Log, Glacier) {
+define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier', 'hud'],
+	function(WaterTool, MeltTool, PoisonTool, Log, Glacier, Hud) {
 		'use strict';
 
 		var Character = me.ObjectEntity.extend({
@@ -159,6 +159,7 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				this[name + 'Tool'] = tool;
 				tool.character = this;
 				this.tools.push(tool);
+				me.state.current().hud.addTool(tool);
 			}
 		});
 

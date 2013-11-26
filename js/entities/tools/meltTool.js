@@ -10,6 +10,7 @@ define(['entities/tool'], function(Tool) {
 
 			this.parent(x, y, settings);
 			this.z = 1000;
+			this.key = 'S';
 		},
 		use: function() {
 			me.event.publish('/tools/meltIce');

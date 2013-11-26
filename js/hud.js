@@ -40,6 +40,46 @@ define([], function() {
 		}
 	});
 
+	var ToolKey = me.Renderable.extend({
+		init: function(x, y, key) {
+			this.parent(new me.Vector2d(x, y), 10, 10);
+			this.floating = true;
+			this.key = key;
+			this.font = new me.Font('VT323', 16, '#000', 'center');
+		},
+		draw: function(context) {
+			this.font.draw(context, this.key, this.pos.x, this.pos.y);
+		}
+	});
+
+	var ToolsContainer = me.ObjectContainer.extend({
+		init: function(x, y) {
+			this.parent();
+			this.x = x;
+			this.y = y;
+			this.tools = 0;
+		},
+		addTool: function(tool) {
+			var x, y;
+			x = this.x + this.tools * 34;
+			y = this.y;
+
+			var container = new me.SpriteObject(x, y, me.loader.getImage('hudToolContainer')),
+					toolSprite = new me.SpriteObject(x + 8, y + 8, me.loader.getImage(tool.image)),
+					keySprite = new ToolKey(x + 16, y + 33, tool.key);
+
+			this.addChild(container);
+			this.addChild(toolSprite);
+			this.addChild(keySprite);
+
+			this.tools++;
+		},
+		reset: function() {
+			_.each(this.children, me.game.remove);
+			this.tools = 0;
+		}
+	});
+
 	var Hud = {
 		Container: me.ObjectContainer.extend({
 			init: function() {
@@ -48,8 +88,16 @@ define([], function() {
 				this.collidable = false;
 				this.z = Infinity;
 				this.name = 'HUD';
+				this.toolsContainer = new ToolsContainer(10, 10);
 				this.addChild(new YearsLeft(me.game.world.width / 2, 10));
 				this.addChild(new WaterLevel(me.game.world.width - 10, 10));
+				this.addChild(this.toolsContainer)
+			},
+			addTool: function(tool) {
+				this.toolsContainer.addTool(tool);
+			},
+			resetTools: function() {
+				this.toolsContainer.reset();
 			}
 		})
 	};

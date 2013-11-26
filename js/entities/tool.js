@@ -5,6 +5,7 @@ define([], function() {
 					y = y || 0;
 
 			this.parent(x, y, settings);
+			this.image = settings.image;
 			this.anchorPoint = new me.Vector2d(0, 0);
 			this.updateColRect(0, this.renderable.width, 0, this.renderable.height);
 		},

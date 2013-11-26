@@ -67,6 +67,7 @@ define(['entities/tool'], function(Tool) {
 			this.parent(x, y, settings);
 			this.z = 1000;
 			this.inUse = false;
+			this.key = 'D';
 		},
 		use: function() {
 			var _this = this;

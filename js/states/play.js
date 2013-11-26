@@ -77,6 +77,7 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 						_this.environment = _.clone(_this.oldEnvironment);
 					}
 
+					_this.hud.resetTools();
 					_this.baseHeight = 0;
 					_this.water = new Water();
 					_this.overlay = new DeadOverlay(_this);

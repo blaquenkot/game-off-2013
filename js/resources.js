@@ -8,6 +8,7 @@ define([], function() {
 		{name: 'meltTool', type: 'image', src: '/game-off-2013/assets/melttool.png'},
 		{name: 'poisonTool', type: 'image', src: '/game-off-2013/assets/poisontool.png'},
 		{name: 'poisonBlast', type: 'image', src: '/game-off-2013/assets/blast.png'},
+		{name: 'hudToolContainer', type: 'image', src: '/game-off-2013/assets/toolcontainer.png'},
 
 		// Background
 		{name: 'sky', type: 'image', src: '/game-off-2013/assets/sky.png'},
