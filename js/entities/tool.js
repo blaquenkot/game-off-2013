@@ -9,11 +9,13 @@ define([], function() {
 			this.updateColRect(0, this.renderable.width, 0, this.renderable.height);
 		},
 		update: function() {
-			this.updateMovement();
+			if (!this.character) {
+				this.updateMovement();
 
-			if (this.vel.x!=0 || this.vel.y!=0) {
-				this.parent();
-				return true;
+				if (this.vel.x!=0 || this.vel.y!=0) {
+					this.parent();
+					return true;
+				}
 			}
 
 			return false;
@@ -38,6 +40,8 @@ define([], function() {
 
 			sizeTween.onComplete(function() {
 				me.game.remove(_this);
+				sizeTween = null;
+				alphaTween = null;
 			});
 
 			sizeTween.start();
