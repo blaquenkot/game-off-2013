@@ -21,6 +21,18 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 			this.startX = x;
 			this.endX = x + settings.width - settings.spritewidth;
 		},
+		updateSound: function() {
+				var _this = this;
+
+				if (this.vel.x != 0){
+					if (!this.playing) {
+						this.playing = true;
+						me.audio.play('step', false, function() {
+							_this.playing = false;
+						}, 0.7);
+					}
+				}
+			},
 		update: function() {
 			// Check if it should change direction
 			if (this.walkingRight && this.pos.x >= this.endX) {
@@ -33,6 +45,7 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 			this.vel.x += (this.walkingRight) ? this.accel.x * me.timer.tick : -this.accel.x * me.timer.tick;
 
 			this.updateMovement();
+			this.updateSound();
 
 			if (this.vel.x!=0 || this.vel.y!=0) {
 				this.parent();
