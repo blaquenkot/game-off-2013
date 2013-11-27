@@ -1,10 +1,12 @@
 define([], function() {
-	function Environment() {
-		var _this = this;
+	'use strict';
 
-		this.waterLevel = 10;
-		this.iceMelting = 0;
-		this.yearsLeft = Environment.MAX_YEARS;
+	function Environment(values) {
+		var values = values || {};
+
+		this.waterLevel = values.waterLevel || 10;
+		this.iceMelting = values.iceMelting || 0;
+		this.yearsLeft = values.yearsLeft || Environment.MAX_YEARS;
 	}
 
 	Environment.MAX_YEARS = 1000;
@@ -19,6 +21,14 @@ define([], function() {
 		if (this.yearsLeft <= 0) {
 			me.event.publish('/environment/noMoreYears');
 		}
+	};
+
+	Environment.prototype.clone = function() {
+		// We don't want to keep the melting level
+		return new Environment({
+			waterLevel: this.waterLevel,
+			yearsLeft: this.yearsLeft
+		});
 	};
 
 	return Environment;

@@ -71,11 +71,10 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 					if (_this.levelId != levelId) {
 						// we changed levels, save the starting environment
 						_this.levelId = levelId;
-						_this.oldEnvironment = _.clone(_this.environment)
-					} else {
-						// we restarted the level, reset the old environment
-						_this.environment = _.clone(_this.oldEnvironment);
+						_this.oldEnvironment = _this.environment.clone();
 					}
+
+					_this.environment = _this.oldEnvironment.clone();
 
 					_this.hud.resetTools();
 					_this.baseHeight = 0;
