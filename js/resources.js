@@ -11,6 +11,9 @@ define([], function() {
 		{name: 'poisonBlast', type: 'image', src: '/game-off-2013/assets/blast.png'},
 		{name: 'hudToolContainer', type: 'image', src: '/game-off-2013/assets/toolcontainer.png'},
 
+		{name: 'logo', type: 'image', src: '/game-off-2013/assets/logo.png'},
+		{name: 'difusebg', type: 'image', src: '/game-off-2013/assets/difusebg.png'},
+
 		// Background
 		{name: 'sky', type: 'image', src: '/game-off-2013/assets/sky.png'},
 		{name: 'ground', type: 'image', src: '/game-off-2013/assets/ground.png'},

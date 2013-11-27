@@ -3,12 +3,15 @@ define([], function() {
 		init: function() {
 			this.parent(true);
 			this.font = null;
+			this.background = me.loader.getImage("difusebg")
+			this.title = me.loader.getImage("logo");
 		},
 		onResetEvent: function() {
 			if (this.font === null) {
 				this.font = new me.Font('arial', '4em', '#fff');
 				this.font.textAlign = 'center';
 			}
+			this.title = me.loader.getImage("logo");
 			me.input.bindKey(me.input.KEY.ENTER, "enter", true);
 		},
 		update: function() {
@@ -19,10 +22,9 @@ define([], function() {
 		},
 		draw: function(context) {
 			// Of course, the following is all temporary
-			context.fillStyle = '#000';
-			context.fillRect(0, 0, me.game.world.width, me.game.world.height);
-			this.font.draw(context, 'Ccccccchanges', me.game.world.width / 2, me.game.world.height / 2 - 20);
-			this.font.draw(context, 'Press Enter to start', me.game.world.width / 2, me.game.world.height / 2 + 20);
+			context.drawImage(this.background, 0, 0);
+			context.drawImage(this.title, 106, me.game.world.height / 2 - 200);
+			this.font.draw(context, 'Press Enter to start', me.game.world.width / 2, me.game.world.height / 2 + 180);
 		},
 		onDestroyEvent: function() {
 			me.input.unbindKey(me.input.KEY.ENTER);
