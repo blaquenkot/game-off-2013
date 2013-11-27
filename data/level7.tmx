@@ -64,18 +64,6 @@
  <objectgroup name="poisonTool" width="57" height="34">
   <object name="poisonTool" x="81" y="241" width="23" height="29"/>
  </objectgroup>
- <objectgroup name="me.LevelEntity" width="57" height="34">
-  <properties>
-   <property name="" value=""/>
-  </properties>
-  <object name="me.LevelEntity" x="865" y="247" width="45" height="54">
-   <properties>
-    <property name="duration" value="250"/>
-    <property name="fade" value="#000"/>
-    <property name="to" value="level8"/>
-   </properties>
-  </object>
- </objectgroup>
  <objectgroup name="Enemy" width="57" height="34">
   <object name="enemy" x="169" y="220" width="109" height="49"/>
   <object name="enemy" x="649" y="318" width="158" height="49"/>
