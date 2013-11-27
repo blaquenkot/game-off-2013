@@ -68,9 +68,21 @@ define([], function() {
 					toolSprite = new me.SpriteObject(x + 8, y + 8, me.loader.getImage(tool.image)),
 					keySprite = new ToolKey(x + 16, y + 33, tool.key);
 
+			toolSprite.alpha = 0;
+			toolSprite.scaleFlag = true;
+			toolSprite.scale = {x: 2, y: 2};
+
+			var sizeTween = new me.Tween(toolSprite.scale)
+				.to({x: 1, y: 1}, 200);
+			var alphaTween = new me.Tween(toolSprite)
+				.to({alpha: 1}, 200);
+
 			this.addChild(container);
 			this.addChild(toolSprite);
 			this.addChild(keySprite);
+
+			alphaTween.start();
+			sizeTween.start();
 
 			this.tools++;
 		},
