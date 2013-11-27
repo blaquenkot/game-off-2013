@@ -30,5 +30,9 @@ define([], function() {
 		}
 	});
 
+	Water.toMeters = function(amount) {
+		return amount / (46 / 1.7); // The character is 46 pixels tall, assume that's 1.70m
+	}
+
 	return Water;
 });

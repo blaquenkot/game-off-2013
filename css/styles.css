@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'wendy';
+	src: url('/game-off-2013/fonts/wendy.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
 	margin: 0;
 	font-family: sans-serif;

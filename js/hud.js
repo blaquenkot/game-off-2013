@@ -1,4 +1,4 @@
-define([], function() {
+define(['water'], function(Water) {
 	var YearsLeft = me.Renderable.extend({
 		init: function(x, y) {
 			this.parent(new me.Vector2d(x, y), 10, 10);
@@ -35,7 +35,7 @@ define([], function() {
 			return false;
 		},
 		draw: function(context) {
-			var meters = this.waterLevel / (46 / 1.7); // The character is 46 pixels tall, assume that's 1.70m
+			var meters = Water.toMeters(this.waterLevel);
 			this.font.draw(context, 'Water level: ' + meters.toFixed(2) + ' meters', this.pos.x, this.pos.y);
 		}
 	});
