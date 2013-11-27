@@ -64,13 +64,13 @@
  <objectgroup name="glaciar" width="57" height="34">
   <object name="glacier" x="285" y="288" width="75" height="200">
    <properties>
-    <property name="height" value="200"/>
+    <property name="height" value="150"/>
     <property name="width" value="80"/>
    </properties>
   </object>
   <object name="glacier" x="631" y="287" width="88" height="189">
    <properties>
-    <property name="height" value="190"/>
+    <property name="height" value="130"/>
     <property name="width" value="90"/>
    </properties>
   </object>
