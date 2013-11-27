@@ -92,9 +92,9 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				this.updateMovement();
 				this.updateAnimation();
 				this.handleCollisions();
+				this.parent();
 
 				if (this.vel.x!=0 || this.vel.y!=0) {
-					this.parent();
 					return true;
 				}
 
