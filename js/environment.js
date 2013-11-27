@@ -9,7 +9,7 @@ define([], function() {
 		this.yearsLeft = values.yearsLeft || Environment.MAX_YEARS;
 	}
 
-	Environment.MAX_YEARS = 1000;
+	Environment.MAX_YEARS = 1500;
 
 	Environment.prototype.waterHeight = function() {
 		return this.waterLevel - (me.game.currentLevel.baseHeight || 0);
