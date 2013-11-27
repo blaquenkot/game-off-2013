@@ -1,5 +1,5 @@
-define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool'],
-	function(Hud, StateManager, Environment, Water, Log, WaterTool, MeltTool, PoisonTool) {
+define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'hintBox'],
+	function(Hud, StateManager, Environment, Water, Log, WaterTool, MeltTool, PoisonTool, HintBox) {
 		'use strict';
 
 		var toolsMap = {
@@ -73,6 +73,10 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 						_this.levelId = levelId;
 						_this.environment.saveStats();
 						_this.oldEnvironment = _this.environment.clone();
+					}
+
+					if (levelId === 'level2') { // I'm so sorry
+						new HintBox(150, 470, 'hintPermanent').show();
 					}
 
 					_this.environment = _this.oldEnvironment.clone();

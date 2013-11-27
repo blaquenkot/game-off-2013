@@ -1,5 +1,5 @@
-define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier', 'hud'],
-	function(WaterTool, MeltTool, PoisonTool, Log, Glacier, Hud) {
+define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier', 'hud', 'hintBox'],
+	function(WaterTool, MeltTool, PoisonTool, Log, Glacier, Hud, HintBox) {
 		'use strict';
 
 		var Character = me.ObjectEntity.extend({
@@ -120,6 +120,8 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 
 				// TODO: Unify these if possible (`instanceof Tool`)
 				if (res.obj instanceof WaterTool) {
+					new HintBox(8, 58, 'hintWater').show();
+
 					me.audio.play("newTool", false, null, 0.4);
 					this.addTool('water', res.obj);
 				}

@@ -14,6 +14,9 @@ define([], function() {
 		{name: 'logo', type: 'image', src: '/game-off-2013/assets/logo.png'},
 		{name: 'difusebg', type: 'image', src: '/game-off-2013/assets/difusebg.png'},
 
+		{name: 'hintWater', type: 'image', src: '/game-off-2013/assets/hintwater.png'},
+		{name: 'hintPermanent', type: 'image', src: '/game-off-2013/assets/hintPermanent.png'},
+
 		// Background
 		{name: 'sky', type: 'image', src: '/game-off-2013/assets/sky.png'},
 		{name: 'ground', type: 'image', src: '/game-off-2013/assets/ground.png'},
