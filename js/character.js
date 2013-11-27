@@ -120,14 +120,17 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 
 				// TODO: Unify these if possible (`instanceof Tool`)
 				if (res.obj instanceof WaterTool) {
+					me.audio.play("newTool", false, null, 0.4);
 					this.addTool('water', res.obj);
 				}
 
 				if (res.obj instanceof MeltTool) {
+					me.audio.play("newTool", false, null, 0.4);
 					this.addTool('melt', res.obj);
 				}
 
 				if (res.obj instanceof PoisonTool) {
+					me.audio.play("newTool", false, null, 0.4);
 					this.addTool('poison', res.obj);
 				}
 			},
