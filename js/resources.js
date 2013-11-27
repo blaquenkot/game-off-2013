@@ -33,6 +33,7 @@ define([], function() {
 		{name: "background", type: "audio", src: "/game-off-2013/data/music/", channel : 1},
 
 		// SFX
-		{name: "step", type: "audio", src: "/game-off-2013/data/sfx/", channel : 1}
+		{name: "step", type: "audio", src: "/game-off-2013/data/sfx/", channel : 1},
+		{name: "newTool", type: "audio", src: "/game-off-2013/data/sfx/", channel : 1}
 	];
 });
