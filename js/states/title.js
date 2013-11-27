@@ -11,7 +11,6 @@ define([], function() {
 				this.font = new me.Font('arial', '4em', '#fff');
 				this.font.textAlign = 'center';
 			}
-			this.title = me.loader.getImage("logo");
 			me.input.bindKey(me.input.KEY.ENTER, "enter", true);
 		},
 		update: function() {
