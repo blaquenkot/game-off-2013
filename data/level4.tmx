@@ -62,9 +62,9 @@
   </object>
  </objectgroup>
  <objectgroup name="glaciar" width="57" height="34">
-  <object name="glacier" x="134" y="198" width="75" height="250">
+  <object name="glacier" x="135" y="237" width="75" height="250">
    <properties>
-    <property name="height" value="200"/>
+    <property name="height" value="250"/>
     <property name="width" value="80"/>
    </properties>
   </object>
