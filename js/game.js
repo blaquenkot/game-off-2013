@@ -5,7 +5,7 @@ define(['resources', 'states/title', 'states/play', 'states/gameover', 'characte
 		function Game() { }
 
 		Game.prototype.run = function() {
-			if (!me.video.init('screen', 912, 544, true)) {
+			if (!me.video.init('game', 912, 544, true)) {
 				alert('Your browser does not support HTML5 canvas.');
 				return;
 			}
