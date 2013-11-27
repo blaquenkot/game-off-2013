@@ -6,15 +6,15 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 		init: function(x, y, settings) {
 			var settings = settings || {};
 
-			settings.spriteheight = 46;
-			settings.spritewidth = 32;
-			settings.image = 'pjTile'
+			settings.spriteheight = 22;
+			settings.spritewidth = 50;
+			settings.image = 'pantherTile';
 
 			this.parent(x, y, settings);
 
-			this.setVelocity(3, 15);
-			this.renderable.addAnimation('anRight', [6, 7, 8, 9, 10, 11]);
-			this.renderable.setCurrentAnimation('anRight');
+			this.setVelocity(2, 10);
+			this.renderable.addAnimation('anWalking', [0, 1, 2]);
+			this.renderable.setCurrentAnimation('anWalking');
 			this.walkingRight = true;
 			this.type = me.game.ENEMY_OBJECT;
 

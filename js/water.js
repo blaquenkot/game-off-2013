@@ -22,7 +22,8 @@ define([], function() {
 			return updated;
 		},
 		isOver: function(renderable) {
-			return this.drawn && renderable.top > this.pos.y;
+			// the 5 is a magic number to fix a little bug with the death
+			return this.drawn && renderable.top > (this.pos.y - 5);
 		},
 		submerged: function(renderable) {
 			return this.drawn ? renderable.bottom - this.pos.y : 0;
