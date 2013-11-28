@@ -5,9 +5,10 @@ define([], function() {
 		this.deathAnimation = function(){
 			this.renderable.scaleFlag = true;
 			var sizeTween = new me.Tween(this.renderable.scale)
-			.to({x: 0.3, y: 0.3}, 10);
+			.to({x: 0.3, y: 0.3}, 100);
 			var alphaTween = new me.Tween(this.renderable)
-			.to({alpha: 0}, 10);
+			.to({alpha: 0}, 100 );
+            alphaTween.onComplete = function(){me.game.remove(this);}
 			sizeTween.start();
 			alphaTween.start();
 		},
@@ -15,7 +16,6 @@ define([], function() {
 		this.update = function() {
 			if (me.game.currentLevel.blast && me.game.currentLevel.blast.caughtInExplosion(this)) {
 				this.deathAnimation();
-				me.game.remove(this);
 			}
 
 			if (oldUpdate) {

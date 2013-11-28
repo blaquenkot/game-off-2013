@@ -12,7 +12,6 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				this.renderable.addAnimation('anStill', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5]);
 				this.renderable.addAnimation('anRight', [6, 7, 8, 9, 10, 11]);
 				this.renderable.addAnimation('anJump', [12, 13, 14, 15, 16, 17]);
-				this.renderable.addAnimation('anDead', [18, 19]);
 
 				this.direction = 'right';
 
@@ -34,25 +33,15 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 					}
 				}
 
-				if (me.state.current().water.submerged(this)){
-					if (!this.playing2) {
-						this.playing2 = true;
+				if (me.state.current().water.submerged(this) > 0 && (this.vel.x != 0 || this.falling)){
+					if (!this.playingWater) {
+						this.playingWater = true;
 
-						me.audio.play('water', false, function() {
-							_this.playing2 = false;
-						});
+						me.audio.play('waterNoise', false, function() {
+							_this.playingWater = false;
+						}, 0.8);
 					}
 				}
-			},
-			deathAnimation: function(){
-				console.log("aa");
-				this.renderable.scaleFlag = true;
-				var sizeTween = new me.Tween(this.renderable.scale)
-				.to({x: 0.3, y: 0.3}, 100);
-				var alphaTween = new me.Tween(this.renderable)
-				.to({alpha: 0}, 100);
-				sizeTween.start();
-				alphaTween.start();
 			},
 			updateAnimation: function(){
 				if (this.vel.x != 0){
@@ -73,6 +62,7 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 			},
 			update: function() {
 				if (this.isDead()) {
+                    this.deathAnimation();
 					me.game.viewport.fadeIn('#000', 100, function() {
 						me.levelDirector.reloadLevel();
 						me.game.viewport.fadeOut('#000', 100);
@@ -109,8 +99,8 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 					this.poisonTool.use();
 				}
 
-				this.updateSound();
 				this.updateMovement();
+                this.updateSound();
 				this.updateAnimation();
 				this.handleCollisions();
 				this.parent();
@@ -160,14 +150,12 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 
 				// is under water
 				if (me.state.current().water.isOver(this)) {
-					this.deathAnimation();
 					return true;
 				}
 
 				// collides with enemy
 				var res = this.collide();
 				if (res && res.obj.type === me.game.ENEMY_OBJECT) {
-					this.deathAnimation();
 					return true;
 				}
 
