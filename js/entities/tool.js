@@ -40,7 +40,7 @@ define([], function() {
 			this.renderable.scaleFlag = true;
 
 			sizeTween.onComplete(function() {
-				me.game.remove(_this);
+                me.game.remove(_this);
 				sizeTween = null;
 				alphaTween = null;
 			});

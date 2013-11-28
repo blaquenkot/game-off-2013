@@ -62,7 +62,6 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 			},
 			update: function() {
 				if (this.isDead()) {
-                    this.deathAnimation();
 					me.game.viewport.fadeIn('#000', 100, function() {
 						me.levelDirector.reloadLevel();
 						me.game.viewport.fadeOut('#000', 100);

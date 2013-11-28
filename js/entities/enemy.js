@@ -33,7 +33,9 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 					}
 				}
 			},
-		update: function() {
+		
+        onDestroyEvent: function(){console.log("aaa");},
+        update: function() {
 			// Check if it should change direction
 			if (this.walkingRight && this.pos.x >= this.endX) {
 				this.walkingRight = false;
