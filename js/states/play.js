@@ -69,8 +69,9 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 
 				me.game.onLevelLoaded = function(levelId) {
 					if (_this.levelId != levelId) {
-						// we changed levels, save the starting environment
+						// we changed levels, save the starting environment and the stats
 						_this.levelId = levelId;
+						_this.environment.saveStats();
 						_this.oldEnvironment = _this.environment.clone();
 					}
 
@@ -116,6 +117,8 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 				me.audio.playTrack('background', 0.7);
 			},
 			onDestroyEvent: function() {
+				this.environment.saveStats();
+				me.game.enviromentalStats = this.environment.stats;
 				me.game.world.removeChild(this.hud);
 				me.audio.stopTrack();
 			}

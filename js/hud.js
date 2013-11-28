@@ -1,4 +1,4 @@
-define([], function() {
+define(['water'], function(Water) {
 	var YearsLeft = me.Renderable.extend({
 		init: function(x, y) {
 			this.parent(new me.Vector2d(x, y), 10, 10);
@@ -35,7 +35,7 @@ define([], function() {
 			return false;
 		},
 		draw: function(context) {
-			var meters = this.waterLevel / (46 / 1.7); // The character is 46 pixels tall, assume that's 1.70m
+			var meters = Water.toMeters(this.waterLevel);
 			this.font.draw(context, 'Water level: ' + meters.toFixed(2) + ' meters', this.pos.x, this.pos.y);
 		}
 	});
@@ -68,9 +68,21 @@ define([], function() {
 					toolSprite = new me.SpriteObject(x + 8, y + 8, me.loader.getImage(tool.image)),
 					keySprite = new ToolKey(x + 16, y + 33, tool.key);
 
+			toolSprite.alpha = 0;
+			toolSprite.scaleFlag = true;
+			toolSprite.scale = {x: 2, y: 2};
+
+			var sizeTween = new me.Tween(toolSprite.scale)
+				.to({x: 1, y: 1}, 200);
+			var alphaTween = new me.Tween(toolSprite)
+				.to({alpha: 1}, 200);
+
 			this.addChild(container);
 			this.addChild(toolSprite);
 			this.addChild(keySprite);
+
+			alphaTween.start();
+			sizeTween.start();
 
 			this.tools++;
 		},

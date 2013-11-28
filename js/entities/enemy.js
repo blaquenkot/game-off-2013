@@ -55,6 +55,9 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 			}
 
 			return false;
+		},
+		onDeath: function() {
+			me.state.current().environment.animalsKilled++;
 		}
 	});
 

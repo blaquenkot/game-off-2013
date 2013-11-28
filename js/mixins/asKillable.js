@@ -15,6 +15,9 @@ define([], function() {
                 alphaTween.start();
                 this.collidable = false;
                 this.gravity = 0;
+                if (this.onDeath) {
+					this.onDeath();
+				}
                 return;
             }
 
