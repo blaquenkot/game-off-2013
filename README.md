@@ -4,21 +4,21 @@ A project for [Github's Game Off 2013](https://github.com/blog/1674-github-game-
 
 ## About the game
 
-How much would you hurt the planet to get to the end?
+How much would you harm the planet in order to survive?
 
-[CH₃CH₂CH₂CH₂CH₃anges](http://www.youtube.com/watch?v=K78gvWXDgNM) is a simple platformer game where your goal is to reach the end of each level. To aid you, you can control several of the effects of our very real **climate changes**. Raise the water level, or melt glaciers to reach your goal.
+[CH₃CH₂CH₂CH₂CH₃anges](http://www.youtube.com/watch?v=K78gvWXDgNM) is a simple platformer game where your main aim is to reach the end of each level. To help you accomplish your goal, you can control several of the effects of our very real **climate changes**. Raise the water level or melt glaciers to achieve your objective.
 
-But of course, messing with the planet is **bad**, isn't it? How far can you get without destroying our home?
+But of course, messing with the planet **is** bad, isn't it? How far can you get without destroying our precious home?
 
 ![Screenshot](http://i.imgur.com/VRIfnNd.jpg)
 
 ## About us
 
-We are [@_joliv](https://twitter.com/_joliv) and [@kotzzi](https://twitter.com/kotzzi). We've been toying with the idea of creating a game for a while, and this seemed like the perfect opportunity/excuse to actually start one and have a deadline pushing us forward. So here it is, our very first game!
+We are [@_joliv](https://twitter.com/_joliv) and [@kotzzi](https://twitter.com/kotzzi). We've been toying for a long time with the idea of creating a game, and this seemed like the perfect opportunity/excuse to actually start one and have a deadline pushing us forward. So here it is, our very first game!
 
 ## About the amazing resources behind the game
 
-Of course this wouldn't have been possible without a community unknowingly backing us up:
+Of course, this wouldn't have been possible without a community unknowingly backing us up:
 
 * [melonJS](http://melonjs.org/): The engine behind the game. Special thanks to the team that has helped us a lot in the forums!
 * [Tiled](http://www.mapeditor.org/) to create the levels.
