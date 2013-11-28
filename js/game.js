@@ -1,5 +1,5 @@
-define(['resources', 'states/title', 'states/play', 'states/gameover', 'states/credits', 'character', 'entities/enemy', 'water', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier'],
-	function(resources, TitleState, PlayState, GameOverState, CreditsState, Character, Enemy, Water, WaterTool, MeltTool, PoisonTool, Log, Glacier) {
+define(['resources', 'states/title', 'states/play', 'states/gameover', 'states/credits', 'character', 'entities/enemy', 'water', 'entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/poisonTool', 'entities/log', 'entities/glacier', 'gameEnd'],
+	function(resources, TitleState, PlayState, GameOverState, CreditsState, Character, Enemy, Water, WaterTool, MeltTool, PoisonTool, Log, Glacier, GameEnd) {
 		'use strict';
 
 		function Game() { }
@@ -43,6 +43,7 @@ define(['resources', 'states/title', 'states/play', 'states/gameover', 'states/c
 			me.entityPool.add('waterTool', WaterTool);
 			me.entityPool.add('meltTool', MeltTool);
 			me.entityPool.add('poisonTool', PoisonTool);
+			me.entityPool.add('gameEnd', GameEnd);
 			me.sys.gravity = 0.98;
 
 			me.input.bindKey(me.input.KEY.LEFT, 'left');

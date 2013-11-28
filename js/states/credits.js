@@ -8,6 +8,8 @@ define(['environment', 'water', 'entities/glacier'], function(Environment, Water
 			if (this.font === null) {
 				this.font = new me.Font('wendy', '2em', '#fff');
 			}
+
+			me.game.viewport.fadeOut('#000', 100);
 		},
 		update: function() {
 			// Listen for the reset event
