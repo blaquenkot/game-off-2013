@@ -4,6 +4,10 @@ define([], function() {
 
 		this.update = function() {
 			if (me.game.currentLevel.blast && me.game.currentLevel.blast.caughtInExplosion(this)) {
+				if (this.onDeath) {
+					this.onDeath();
+				}
+
 				me.game.remove(this);
 			}
 

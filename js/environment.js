@@ -8,11 +8,12 @@ define([], function() {
 		this.iceMelting = values.iceMelting || 0;
 		this.iceMelted = values.iceMelted || 0;
 		this.yearsLeft = values.yearsLeft || Environment.MAX_YEARS;
+		this.animalsKilled = values.animalsKilled || 0;
 		this.stats = values.stats || {
 			waterLevel: this.waterLevel,
 			iceMelted: this.iceMelting,
 			yearsLeft: this.yearsLeft,
-			animalsKilled: 0
+			animalsKilled: this.animalsKilled
 		};
 	}
 
@@ -35,16 +36,17 @@ define([], function() {
 		return new Environment({
 			waterLevel: this.waterLevel,
 			yearsLeft: this.yearsLeft,
+			animalsKilled: this.animalsKilled,
 			stats: _.clone(this.stats)
 		});
 	};
 
 	Environment.prototype.saveStats = function() {
-		this.stats.waterLevel += this.waterLevel;
+		this.stats.waterLevel = this.waterLevel;
 		this.stats.iceMelted += this.iceMelting;
 		this.stats.yearsLeft = this.yearsLeft;
-		this.stats.animalsKilled += 1; // TODO: Real count
-	}
+		this.stats.animalsKilled = this.animalsKilled;
+	};
 
 	return Environment;
 });
