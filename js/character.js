@@ -32,6 +32,16 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 						});
 					}
 				}
+
+				if (me.state.current().water.submerged(this) > 0 && (this.vel.x != 0 || this.falling)){
+					if (!this.playingWater) {
+						this.playingWater = true;
+
+						me.audio.play('waterNoise', false, function() {
+							_this.playingWater = false;
+						}, 0.8);
+					}
+				}
 			},
 			updateAnimation: function(){
 				if (this.vel.x != 0){
@@ -88,8 +98,8 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 					this.poisonTool.use();
 				}
 
-				this.updateSound();
 				this.updateMovement();
+                this.updateSound();
 				this.updateAnimation();
 				this.handleCollisions();
 				this.parent();

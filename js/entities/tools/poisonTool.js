@@ -12,7 +12,7 @@ define(['entities/tool'], function(Tool) {
 			settings.image = 'poisonBlast';
 			settings.collidable = false;
 
-			this.duration = settings.duration || 1000;
+			this.duration = settings.duration || 500;
 			this.radiusScale = settings.radiusScale || 5;
 			callback = settings.callback;
 

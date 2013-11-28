@@ -37,6 +37,7 @@ define([], function() {
 
 		// SFX
 		{name: "step", type: "audio", src: "/game-off-2013/data/sfx/", channel : 1},
-		{name: "newTool", type: "audio", src: "/game-off-2013/data/sfx/", channel : 1}
+		{name: "newTool", type: "audio", src: "/game-off-2013/data/sfx/", channel : 1},
+		{name: "waterNoise", type: "audio", src: "/game-off-2013/data/sfx/", channel : 1}
 	];
 });

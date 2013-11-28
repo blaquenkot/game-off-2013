@@ -24,7 +24,7 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 		updateSound: function() {
 				var _this = this;
 
-				if (this.vel.x != 0){
+				if (this.vel.x != 0 && this.alive){
 					if (!this.playing) {
 						this.playing = true;
 						me.audio.play('step', false, function() {
@@ -33,7 +33,7 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 					}
 				}
 			},
-		update: function() {
+        update: function() {
 			// Check if it should change direction
 			if (this.walkingRight && this.pos.x >= this.endX) {
 				this.walkingRight = false;
