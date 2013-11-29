@@ -3,6 +3,7 @@ define([], function() {
 		// Graphics
 		{name: 'tile', type: 'image', src: '/game-off-2013/assets/tile.png'},
 		{name: 'pjTile', type: 'image', src: '/game-off-2013/assets/pjtile.png'},
+		{name: 'iceTile', type: 'image', src: '/game-off-2013/assets/ice.png'},
 		{name: 'pantherTile', type: 'image', src: '/game-off-2013/assets/panthertile.png'},
 		{name: 'log', type: 'image', src: '/game-off-2013/assets/log.png'},
 		{name: 'waterTool', type: 'image', src: '/game-off-2013/assets/watertool.png'},

@@ -1,14 +1,16 @@
 define(['buoyant'], function(Buoyant) {
 	'use strict';
 
-	var Ice = me.ColorLayer.extend({
-		init: function() {
-			this.parent('ice', '#fff', 110);
+	var Ice = me.SpriteObject.extend({
+		init: function(x, y, glacier) {
+			this.glacier = glacier;
+			this.parent(x, y, {image: 'iceTile'});
 		},
-		draw: function(context) { // TODO: Why do we need this
-			this.parent(context, this);
-		},
-		destroy: function() {} // HORRIBLE hack so it won't crash on level reload
+		draw: function(context) {
+			var pattern = context.createPattern(me.loader.getImage('iceTile'), 'repeat');
+			context.fillStyle = pattern;
+			context.fillRect(0, 0, this.width, this.height);
+		}
 	});
 
 	var Glacier = Buoyant.extend({
@@ -18,7 +20,7 @@ define(['buoyant'], function(Buoyant) {
 			this.parent(x, y, settings);
 
 			this.floatingFactor = 0.05;
-			this.renderable = new Ice();
+			this.renderable = new Ice(x, y, this);
 			this.anchorPoint = new me.Vector2d(0, 1);
 			this.updateColRect(0, settings.width, 1, settings.height);
 			this.renderable.width = settings.width;
