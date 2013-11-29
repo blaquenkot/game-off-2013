@@ -8,6 +8,11 @@
 body {
 	margin: 0;
 	font-family: sans-serif;
+	background-image: url('../images/background.jpg');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-color: #000;
+	color: #fff;
 }
 
 .content {
@@ -17,4 +22,8 @@ body {
 
 h1 {
 	font-weight: normal;
+}
+
+#game {
+	margin-top: 20px;
 }

@@ -8,7 +8,7 @@ define([], function() {
 		},
 		onResetEvent: function() {
 			if (this.font === null) {
-				this.font = new me.Font('arial', '4em', '#fff');
+				this.font = new me.Font('Wendy', '4em', '#fff');
 				this.font.textAlign = 'center';
 			}
 			me.input.bindKey(me.input.KEY.ENTER, "enter", true);
