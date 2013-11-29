@@ -62,6 +62,27 @@ define(['water', 'entities/glacier'], function(Water, Glacier) {
 		}
 	});
 
+	var AnimalsKilled = me.Renderable.extend({
+		init: function(x, y) {
+			this.parent(new me.Vector2d(x, y), 10, 10);
+			this.animalsKiled = -1;
+			this.floating = true;
+			this.font = new me.Font('VT323', 20, '#000', 'right');
+		},
+		update: function() {
+			var env = me.state.current().environment;
+			if (this.animalsKilled !== env.animalsKilled) {
+				this.animalsKilled = env.animalsKilled;
+				return true;
+			}
+
+			return false;
+		},
+		draw: function(context) {
+			this.font.draw(context, 'Animals killed: ' + this.animalsKilled, this.pos.x, this.pos.y);
+		}
+	});
+
 	var ToolKey = me.Renderable.extend({
 		init: function(x, y, key) {
 			this.parent(new me.Vector2d(x, y), 10, 10);
@@ -126,6 +147,7 @@ define(['water', 'entities/glacier'], function(Water, Glacier) {
 				this.addChild(new YearsLeft(me.game.world.width / 2, 10));
 				this.addChild(new WaterLevel(me.game.world.width - 10, 10));
 				this.addChild(new IceMelted(me.game.world.width - 10, 30));
+				this.addChild(new AnimalsKilled(me.game.world.width - 10, 50));
 				this.addChild(this.toolsContainer)
 			},
 			addTool: function(tool) {
