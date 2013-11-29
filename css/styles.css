@@ -15,6 +15,10 @@ body {
 	color: #fff;
 }
 
+canvas {
+	border: 2px solid #000;
+}
+
 .content {
 	width: 100%;
 	text-align: center;
@@ -24,6 +28,29 @@ h1 {
 	font-weight: normal;
 }
 
+h2 {
+	font-weight: normal;
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+	color: #6CBEEC;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 #game {
 	margin-top: 20px;
+}
+
+.description {
+	margin: 0 auto;
+	width: 912px;
+}
+
+footer {
+	font-size: 12px;
 }
