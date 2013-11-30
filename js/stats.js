@@ -12,7 +12,7 @@ $(function() {
 		var statsContainer = $('.stats');
 
 		if (statsContainer.height() === 0) {
-			statsContainer.animate({height: 95}, 500);
+			statsContainer.animate({height: 110}, 500);
 		}
 
 		_.each(stats, function(value, name) {
