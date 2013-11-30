@@ -62,7 +62,7 @@ define(['water', 'entities/glacier'], function(Water, Glacier) {
 		draw: function(context) {
 			if (me.game.character.tools.length >= 2){
                 var cm3 = Glacier.toCubicCm(this.iceMelted);
-			    this.font.draw(context, 'Ice melted: ' + cm3.toFixed(2) + 'cm3', this.pos.x, this.pos.y);
+			    this.font.draw(context, 'Ice melted: ' + cm3.toFixed(2) + ' cm3', this.pos.x, this.pos.y);
             }
 		}
 	});

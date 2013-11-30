@@ -44,10 +44,6 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				}
 			},
 			updateAnimation: function(){
-                
-                console.log(me.game.character);
-                
-                
 				if (this.vel.x != 0){
 					if (this.direction == 'right' && !this.renderable.isCurrentAnimation('anRight')) {
 						this.renderable.setCurrentAnimation('anRight');
