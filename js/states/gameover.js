@@ -31,7 +31,7 @@ define([], function() {
 		},
 		draw: function(context) {
 			context.drawImage(this.background, 0, 0);
-            this.font.draw(context, 'Oh, you killed the planet', me.game.world.width / 2, me.game.world.height / 2 - 100);
+            this.font.draw(context, 'Thanks, you killed the planet', me.game.world.width / 2, me.game.world.height / 2 - 100);
 			this.font.draw(context, 'Press 0 to restart', me.game.world.width / 2, me.game.world.height / 2 + 20);
 		},
 	});
