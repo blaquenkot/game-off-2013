@@ -19,6 +19,7 @@ define([], function() {
 		{name: 'hintWater', type: 'image', src: '/game-off-2013/assets/hintwater.png'},
 		{name: 'hintMelt', type: 'image', src: '/game-off-2013/assets/hintmelt.png'},
 		{name: 'hintPoison', type: 'image', src: '/game-off-2013/assets/hintpoison.png'},
+		{name: 'hintReset', type: 'image', src: '/game-off-2013/assets/hintreset.png'},
 		{name: 'hintPermanent', type: 'image', src: '/game-off-2013/assets/hintpermanent.png'},
 
 		// Background

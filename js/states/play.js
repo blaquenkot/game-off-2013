@@ -43,7 +43,7 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 		var Play = me.ScreenObject.extend({
 			init: function() {
 				var _this = this;
-                            
+
 				// TODO: The event listeners should probably be somewhere else
 				me.event.subscribe('/tools/raiseWater', function(change) {
 					_this.environment.waterLevel += change || 1;
@@ -69,7 +69,7 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 
 				me.game.onLevelLoaded = function(levelId) {
                     me.game.character = me.game.world.getEntityByProp('name', 'character')[0];
-                    
+
 					if (_this.levelId != levelId) {
 						// we changed levels, save the starting environment and the stats
 						_this.levelId = levelId;
@@ -79,6 +79,7 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 
 					if (levelId === 'level2') { // I'm so sorry
 						new HintBox(150, 470, 'hintPermanent').show();
+						new HintBox(430, 470, 'hintReset').show();
 					}
 
 					_this.environment = _this.oldEnvironment.clone();
