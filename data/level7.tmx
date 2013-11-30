@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="57" height="34" tilewidth="16" tileheight="16" backgroundcolor="#55aaff">
+<map version="1.0" orientation="orthogonal" width="57" height="34" tilewidth="16" tileheight="16">
  <properties>
   <property name="baseHeight" value="40"/>
   <property name="tools" value="json:[&quot;water&quot;,&quot;melt&quot;, &quot;poison&quot;]"/>
