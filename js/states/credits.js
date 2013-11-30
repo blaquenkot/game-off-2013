@@ -52,7 +52,7 @@ define(['environment', 'water', 'entities/glacier'], function(Environment, Water
 
 			// Twitter event
 			me.input.registerPointerEvent('mousedown', this.twitterCoords, function() {
-				window.open('https://twitter.com/intent/tweet?hashtags=chchchchchanges&url=' + socialMessage.getUrl() + '&text=' + socialMessage.getEncodedMessage(), 'Tweet!', '_blank,width=420,height=230');
+				window.open('https://twitter.com/intent/tweet?hashtags=ChChChChChanges&url=' + socialMessage.getUrl() + '&text=' + socialMessage.getEncodedMessage(), 'Tweet!', '_blank,width=420,height=230');
 			});
 
 			// Facebook event
