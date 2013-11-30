@@ -120,7 +120,7 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 				this.environment = new Environment();
 				this.hud = new Hud.Container();
 				me.game.add(this.hud);
-				me.levelDirector.loadLevel('level8');
+				me.levelDirector.loadLevel('level1');
 				me.audio.playTrack('background', 0.7);
 			},
 			onDestroyEvent: function() {
