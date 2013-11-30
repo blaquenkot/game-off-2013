@@ -79,7 +79,6 @@ define(['environment', 'water', 'entities/glacier'], function(Environment, Water
 			this.font.draw(context, Glacier.toCubicCm(me.game.enviromentalStats.iceMelted).toFixed(2) + ' cm3 of ice melted', me.game.world.width / 2, me.game.world.height / 2 - 10);
 			this.font.draw(context, animalsKilled + (animalsKilled == 1 ? ' animal' : ' animals') + ' killed', me.game.world.width / 2 , me.game.world.height / 2 + 10);
 			this.font.draw(context, 'Press 0 to try again', me.game.world.width / 2, me.game.world.height / 2 + 30);
-
 			this.font.draw(context, 'Share on Twitter | Facebook', me.game.world.width / 2, me.game.world.height - 40);
 		}
 	});

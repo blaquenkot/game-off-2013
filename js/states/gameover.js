@@ -1,12 +1,24 @@
 define([], function() {
-	var GameOver = me.ScreenObject.extend({
+    var DeadOverlay = me.ColorLayer.extend({
+		init: function(state) {
+		    this.parent('deadOverlay', '#C00', Infinity);
+		    this.state = state;
+        	    this.alpha = 0.6;
+		}
+	});
+
+    
+    var GameOver = me.ScreenObject.extend({
 		init: function() {
 			this.font = null;
 			this.parent(true);
+            this.background = me.loader.getImage("difusebg");
+            this.overlay = new DeadOverlay();
 		},
 		onResetEvent: function() {
+            me.game.world.addChild(this.overlay);
 			if (this.font === null) {
-				this.font = new me.Font('arial', '4em', '#fff', 'center');
+				this.font = new me.Font('Wendy', '4em', '#fff', 'center'); 
 			}
 		},
 		update: function() {
@@ -18,9 +30,8 @@ define([], function() {
 			return true;
 		},
 		draw: function(context) {
-			context.fillStyle = '#000';
-			context.fillRect(0, 0, me.game.world.width, me.game.world.height);
-			this.font.draw(context, 'Game over', me.game.world.width / 2, me.game.world.height / 2 - 20);
+			context.drawImage(this.background, 0, 0);
+            this.font.draw(context, 'Thanks, you killed the planet', me.game.world.width / 2, me.game.world.height / 2 - 100);
 			this.font.draw(context, 'Press 0 to restart', me.game.world.width / 2, me.game.world.height / 2 + 20);
 		},
 	});

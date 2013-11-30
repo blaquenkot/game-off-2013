@@ -28,10 +28,11 @@ As for the art:
 
 * [The character](http://opengameart.org/content/mv-platformer-male-32x64), thanks [MoikMellah](http://opengameart.org/users/moikmellah)!
 * [The tileset](http://opengameart.org/content/bgj-asset-dump), thanks [Blarget](http://opengameart.org/users/blarget2)!
-* [The background](http://opengameart.org/content/large-nature-background) - © 2012-2013 Julien Jorge <julien.jorge@stuff-o-matic.com>
-* [The panther](http://www.tekepon.net/fsm/modules/imgbb/viewtopic.php?topic_id=2372&forum=2), by rico.
+* [The background](http://opengameart.org/content/large-nature-background) - © 2012-2013 Julien Jorge <julien.jorge@stuff-o-matic.com>!
+* [The panther](http://www.tekepon.net/fsm/modules/imgbb/viewtopic.php?topic_id=2372&forum=2), by rico!
++ [The log](http://opengameart.org/content/rpg-tiles-cobble-stone-paths-town-objects), by Zabin, Daneeklu, Jetrel, Hyptosis, Redshrike, Bertram!
 * [The water tool](http://opengameart.org/content/2d-object-pack), from the PlatForge project, thanks to Hannah Cohan and Stafford McIntyre!
 * [The melt tool](http://opengameart.org/content/whispers-of-avalon-item-icons), thanks Meway, Len Pabin, Auran and Silviyius!
 * [The poison tool](http://opengameart.org/content/potion-bottles), thanks [Rafaelchm](http://opengameart.org/users/rafaelchm)!
-* [The background music](http://opengameart.org/content/gray-trip), by [HorrorPen](http://opengameart.org/users/horrorpen).
-* [The step SFX](http://opengameart.org/content/grass-foot-step-sounds-yo-frankie), by the Blender Foundation.
+* [The background music](http://opengameart.org/content/gray-trip), by [HorrorPen](http://opengameart.org/users/horrorpen)!
+* [The step SFX](http://opengameart.org/content/grass-foot-step-sounds-yo-frankie), by the Blender Foundation!

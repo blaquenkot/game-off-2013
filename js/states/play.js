@@ -43,7 +43,7 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 		var Play = me.ScreenObject.extend({
 			init: function() {
 				var _this = this;
-
+                            
 				// TODO: The event listeners should probably be somewhere else
 				me.event.subscribe('/tools/raiseWater', function(change) {
 					_this.environment.waterLevel += change || 1;
@@ -68,6 +68,8 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 				});
 
 				me.game.onLevelLoaded = function(levelId) {
+                    me.game.character = me.game.world.getEntityByProp('name', 'character')[0];
+                    
 					if (_this.levelId != levelId) {
 						// we changed levels, save the starting environment and the stats
 						_this.levelId = levelId;
@@ -101,14 +103,14 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 
 					if (me.game.currentLevel.tools) {
 						// Give the character the initial tools
-						var character = me.game.world.getEntityByProp('name', 'character')[0],
-								tools = me.game.currentLevel.tools,
-								toolIndex,
-								toolName;
+						me.game.character = me.game.world.getEntityByProp('name', 'character')[0];
+                        var tools = me.game.currentLevel.tools,
+                            toolIndex,
+                            toolName;
 
 						for (toolIndex = 0; toolIndex < tools.length; toolIndex++) {
 							var toolName = tools[toolIndex];
-							character.addTool(toolName, new toolsMap[toolName].klass());
+							me.game.character.addTool(toolName, new toolsMap[toolName].klass());
 						}
 					}
 				};

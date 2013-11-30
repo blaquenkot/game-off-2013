@@ -3,7 +3,7 @@ define([], function() {
 		init: function() {
 			this.parent(true);
 			this.font = null;
-			this.background = me.loader.getImage("difusebg")
+			this.background = me.loader.getImage("difusebg");
 			this.title = me.loader.getImage("logo");
 		},
 		onResetEvent: function() {
@@ -20,7 +20,6 @@ define([], function() {
 			return false;
 		},
 		draw: function(context) {
-			// Of course, the following is all temporary
 			context.drawImage(this.background, 0, 0);
 			context.drawImage(this.title, 106, me.game.world.height / 2 - 200);
 			this.font.draw(context, 'Press Enter to start', me.game.world.width / 2, me.game.world.height / 2 + 180);
