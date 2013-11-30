@@ -28,6 +28,11 @@ define(['resources', 'states/title', 'states/play', 'states/gameover', 'states/c
 
 			// Initialize melonJS and display a loading screen.
 			me.state.change(me.state.LOADING);
+
+			var pixelRatio = me.device.getPixelRatio();
+			if (pixelRatio > 1) {
+				me.video.updateDisplaySize(pixelRatio, pixelRatio);
+			}
 		};
 
 		Game.prototype.loaded = function() {
