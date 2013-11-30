@@ -78,8 +78,8 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 					}
 
 					if (levelId === 'level2') { // I'm so sorry
-						new HintBox(150, 470, 'hintPermanent').show();
-						new HintBox(430, 470, 'hintReset').show();
+						new HintBox(150, 485, 'hintPermanent').show();
+						new HintBox(430, 485, 'hintReset').show();
 					}
 
 					_this.environment = _this.oldEnvironment.clone();

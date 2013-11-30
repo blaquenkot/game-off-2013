@@ -17,7 +17,7 @@ define([], function() {
 		};
 	}
 
-	Environment.MAX_YEARS = 2000;
+	Environment.MAX_YEARS = 1800;
 
 	Environment.prototype.waterHeight = function() {
 		return this.waterLevel - (me.game.currentLevel.baseHeight || 0);
