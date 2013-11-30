@@ -78,11 +78,17 @@
   <object name="enemy" x="533" y="459" width="91" height="29"/>
   <object name="enemy" x="300" y="462" width="91" height="29"/>
  </objectgroup>
- <objectgroup name="gameEnd" width="57" height="34">
+ <objectgroup name="me.levelEntity" width="57" height="34">
   <properties>
    <property name="" value=""/>
   </properties>
-  <object name="gameEnd" x="862" y="257" width="45" height="54"/>
+  <object name="me.levelEntity" x="862" y="257" width="45" height="54">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000"/>
+    <property name="to" value="level9"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="collision" width="57" height="34" visible="0">
   <data encoding="base64">

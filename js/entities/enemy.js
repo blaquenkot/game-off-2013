@@ -1,4 +1,4 @@
-define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrownable) {
+define(['mixins/asKillable', 'mixins/asDrownable', 'entities/glacier'], function(asKillable, asDrownable, Glacier) {
 	'use strict';
 
 	// We can eventually make this more generic if we have several types of enemies
@@ -46,6 +46,7 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 
 			this.updateMovement();
 			this.updateSound();
+			this.handleCollisions();
 
 			if (this.vel.x!=0 || this.vel.y!=0) {
 				this.parent();
@@ -56,7 +57,19 @@ define(['mixins/asKillable', 'mixins/asDrownable'], function(asKillable, asDrown
 		},
 		onDeath: function() {
 			me.state.current().environment.animalsKilled++;
-		}
+		},
+		handleCollisions: function() {
+				var res = this.collide();
+
+				if (!res) {
+					return;
+				}
+
+				if (res.obj instanceof Glacier) {
+					this.pos.x -= res.x;
+					this.pos.y -= res.y;
+				}
+		},
 	});
 
 	asKillable.call(Enemy.prototype);
