@@ -88,6 +88,13 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 
 				if (me.input.isKeyPressed('waterTool') && this.waterTool) {
 					this.waterTool.use();
+					var _this = this;
+					if (!this.playingWater) {
+						this.playingWater = true;
+						me.audio.play('waterNoise', false, function() {
+							_this.playingWater = false;
+						}, 0.4);
+					}
 				}
 
 				if (me.input.isKeyPressed('meltTool') && this.meltTool) {
