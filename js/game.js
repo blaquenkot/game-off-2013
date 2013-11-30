@@ -48,6 +48,7 @@ define(['resources', 'states/title', 'states/play', 'states/gameover', 'states/c
 
 			me.input.bindKey(me.input.KEY.LEFT, 'left');
 			me.input.bindKey(me.input.KEY.RIGHT, 'right');
+			me.input.bindKey(me.input.KEY.SPACE, 'jump', true);
 			me.input.bindKey(me.input.KEY.UP, 'jump', true);
 			me.input.bindKey(me.input.KEY.NUM1, 'waterTool');
 			me.input.bindKey(me.input.KEY.NUM2, 'meltTool');
