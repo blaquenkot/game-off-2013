@@ -1,10 +1,10 @@
 define([], function() {
     var DeadOverlay = me.ColorLayer.extend({
 		init: function(state) {
-			this.parent('deadOverlay', '#C00', Infinity);
-			this.state = state;
-            this.alpha = 0.6;
-		},
+		    this.parent('deadOverlay', '#C00', Infinity);
+		    this.state = state;
+        	    this.alpha = 0.6;
+		}
 	});
 
     
