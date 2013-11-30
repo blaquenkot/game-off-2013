@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="57" height="34" tilewidth="16" tileheight="16">
  <properties>
-  <property name="" value=""/>
   <property name="baseHeight" value="5"/>
  </properties>
  <tileset firstgid="1" name="tile" tilewidth="16" tileheight="16">
