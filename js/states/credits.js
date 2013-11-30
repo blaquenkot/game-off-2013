@@ -59,6 +59,13 @@ define(['environment', 'water', 'entities/glacier'], function(Environment, Water
 			me.input.registerPointerEvent('mousedown', this.facebookCoords, function() {
 				window.open('http://www.facebook.com/sharer.php?u=' + socialMessage.getUrl(), 'Share!', '_blank,width=620,height=300');
 			});
+
+			me.event.publish('/game/finished', [{
+				yearsLost: Environment.MAX_YEARS - me.game.enviromentalStats.yearsLeft,
+				waterRaised: Water.toMeters(me.game.enviromentalStats.waterLevel),
+				iceMelted: Glacier.toCubicCm(me.game.enviromentalStats.iceMelted),
+				animalsKilled: me.game.enviromentalStats.animalsKilled
+			}]);
 		},
 		onDestroyEvent: function() {
 			me.input.releasePointerEvent('mousedown', this.twitterCoords);
