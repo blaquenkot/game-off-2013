@@ -5,7 +5,7 @@ define(['water', 'entities/glacier'], function(Water, Glacier) {
 			this.years = -1;
 			this.floating = true;
 			this.font = new me.Font('VT323', 20, '#000', 'center');
-            this.character =  me.game.world.getEntityByProp('name', 'character')[0];
+           		this.character = me.game.character;
 		},
 		update: function() {
 			if (this.years !== me.state.current().environment.yearsLeft) {
