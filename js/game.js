@@ -20,11 +20,11 @@ define(['resources', 'states/title', 'states/play', 'states/gameover', 'states/c
 			// Initialize audio
 			me.audio.init("mp3,ogg");
 
+            // Load the resources
+			me.loader.preload(resources);
+            
 			// Callback when everything is loaded
 			me.loader.onload = this.loaded;
-
-			// Load the resources
-			me.loader.preload(resources);
 
 			// Initialize melonJS and display a loading screen.
 			me.state.change(me.state.LOADING);

@@ -62,15 +62,15 @@
   </object>
  </objectgroup>
  <objectgroup name="glaciar" width="57" height="34">
-  <object name="glacier" x="637" y="291" width="96" height="208">
+  <object name="glacier" x="637" y="307" width="96" height="198">
    <properties>
-    <property name="height" value="192"/>
+    <property name="height" value="180"/>
     <property name="width" value="96"/>
    </properties>
   </object>
-  <object name="glacier" x="259" y="343" width="96" height="176">
+  <object name="glacier" x="259" y="343" width="94" height="169">
    <properties>
-    <property name="height" value="160"/>
+    <property name="height" value="150"/>
     <property name="width" value="96"/>
    </properties>
   </object>

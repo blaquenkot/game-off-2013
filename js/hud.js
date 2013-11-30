@@ -5,6 +5,7 @@ define(['water', 'entities/glacier'], function(Water, Glacier) {
 			this.years = -1;
 			this.floating = true;
 			this.font = new me.Font('VT323', 20, '#000', 'center');
+            this.character =  me.game.world.getEntityByProp('name', 'character')[0];
 		},
 		update: function() {
 			if (this.years !== me.state.current().environment.yearsLeft) {
@@ -35,8 +36,10 @@ define(['water', 'entities/glacier'], function(Water, Glacier) {
 			return false;
 		},
 		draw: function(context) {
-			var meters = Water.toMeters(this.waterLevel);
-			this.font.draw(context, 'Water level: ' + meters.toFixed(2) + ' meters', this.pos.x, this.pos.y);
+			if (me.game.character.tools.length >= 1){
+                var meters = Water.toMeters(this.waterLevel);
+                this.font.draw(context, 'Water level: ' + meters.toFixed(2) + ' meters', this.pos.x, this.pos.y);
+            }
 		}
 	});
 
@@ -57,8 +60,10 @@ define(['water', 'entities/glacier'], function(Water, Glacier) {
 			return false;
 		},
 		draw: function(context) {
-			var cm3 = Glacier.toCubicCm(this.iceMelted);
-			this.font.draw(context, 'Ice melted: ' + cm3.toFixed(2) + 'cm3', this.pos.x, this.pos.y);
+			if (me.game.character.tools.length >= 2){
+                var cm3 = Glacier.toCubicCm(this.iceMelted);
+			    this.font.draw(context, 'Ice melted: ' + cm3.toFixed(2) + 'cm3', this.pos.x, this.pos.y);
+            }
 		}
 	});
 
@@ -79,7 +84,9 @@ define(['water', 'entities/glacier'], function(Water, Glacier) {
 			return false;
 		},
 		draw: function(context) {
-			this.font.draw(context, 'Animals killed: ' + this.animalsKilled, this.pos.x, this.pos.y);
+			if (me.game.character.tools.length >= 3){
+                this.font.draw(context, 'Animals killed: ' + this.animalsKilled, this.pos.x, this.pos.y);
+            }
 		}
 	});
 
