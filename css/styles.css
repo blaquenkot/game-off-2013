@@ -53,8 +53,18 @@ a:hover {
 
 footer {
 	font-size: 12px;
+	width: 912px;
+	margin: 0 auto;
 }
 
 .twitter-share-button {
 	margin-left: 20px;
+}
+
+#facebook-iframe {
+	width: 100px;
+}
+
+.social {
+	text-align: left;
 }

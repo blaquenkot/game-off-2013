@@ -13,15 +13,6 @@
 		<script data-main="js/main" src="js/lib/require.js"></script>
 	</head>
 	<body>
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=762078187142653";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
 		<div class="content">
 			<a href="https://github.com/julioolvr/game-off-2013"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>
 			<div id="game"></div>
@@ -34,9 +25,11 @@
 			</div>
 			<footer>
 				<p>An entry for <a href="https://github.com/blog/1674-github-game-off-ii">Github's Game Off II</a>, by <a href="https://twitter.com/kotzzi">@kotzzi</a> and <a href="https://twitter.com/_joliv">@_joliv</a></p>
-				<div class="fb-like" data-href="http://joliv.me/game-off-2013/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-text="How much would you harm the planet in order to survive?" data-hashtags="ChChChChChanges">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<div class="social">
+					<iframe id="facebook-iframe" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fjoliv.me%2Fgame-off-2013&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=762078187142653" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-text="How much would you harm the planet in order to survive?" data-hashtags="ChChChChChanges">Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
 			</footer>
 		</div>
 		<div style="font-family: 'VT323'">&nbsp;</div>
