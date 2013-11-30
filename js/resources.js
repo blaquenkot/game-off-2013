@@ -16,11 +16,11 @@ define([], function() {
 		{name: 'difusebg', type: 'image', src: '/game-off-2013/assets/difusebg.png'},
 
 		// Hints
-		{name: 'hintWater', type: 'image', src: '/game-off-2013/assets/hintwater.png'},
-		{name: 'hintMelt', type: 'image', src: '/game-off-2013/assets/hintmelt.png'},
-		{name: 'hintPoison', type: 'image', src: '/game-off-2013/assets/hintpoison.png'},
-		{name: 'hintReset', type: 'image', src: '/game-off-2013/assets/hintreset.png'},
-		{name: 'hintPermanent', type: 'image', src: '/game-off-2013/assets/hintpermanent.png'},
+    {name: 'hintWater', type: 'image', src: '/game-off-2013/assets/hintwater.png'},
+    {name: 'hintMelt', type: 'image', src: '/game-off-2013/assets/hintmelt.png'},
+    {name: 'hintPoison', type: 'image', src: '/game-off-2013/assets/hintpoison.png'},
+    {name: 'hintReset', type: 'image', src: '/game-off-2013/assets/hintreset.png'},
+    {name: 'hintPermanent', type: 'image', src: '/game-off-2013/assets/hintpermanent.png'},
 
 		// Background
 		{name: 'sky', type: 'image', src: '/game-off-2013/assets/sky.png'},
@@ -37,6 +37,8 @@ define([], function() {
 		{name: 'level6', type: 'tmx', src: '/game-off-2013/data/level6.tmx'},
 		{name: 'level7', type: 'tmx', src: '/game-off-2013/data/level7.tmx'},
 		{name: 'level8', type: 'tmx', src: '/game-off-2013/data/level8.tmx'},
+		{name: 'level9', type: 'tmx', src: '/game-off-2013/data/level9.tmx'},
+		{name: 'level10', type: 'tmx', src: '/game-off-2013/data/level10.tmx'},
 
 		// Background Music
 		{name: "background", type: "audio", src: "/game-off-2013/data/music/", channel : 1},
