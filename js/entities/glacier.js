@@ -25,14 +25,8 @@ define(['buoyant'], function(Buoyant) {
 			this.updateColRect(0, settings.width, 1, settings.height);
 			this.renderable.width = settings.width;
 			this.renderable.height = settings.height;
-			this.meltingCallback = function (melt) {
-				// We assume that the glacier is as wide as long, and it melted 'melt' pixels.
-				me.state.current().environment.iceMelted += melt * this.renderable.width * this.renderable.width;
-			}.bind(this)
 
 			this.baseHeight = settings.height;
-
-			me.event.subscribe('/tools/meltIce', this.meltingCallback);
 		},
 		hasMelted: function() {
 			return me.state.current().environment.iceMelting > this.baseHeight;
@@ -54,9 +48,6 @@ define(['buoyant'], function(Buoyant) {
 			this.updateColRect(-1, undefined, 1, this.renderable.height);
 
 			return this.parent();
-		},
-		onDestroyEvent: function() {
-			me.event.unsubscribe('/tools/meltIce', this.meltingCallback);
 		}
 	});
 
