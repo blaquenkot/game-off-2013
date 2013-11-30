@@ -55,8 +55,8 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				} else if (!this.renderable.isCurrentAnimation('anStill')) {
 					this.renderable.setCurrentAnimation('anStill');
 				}
-                
-				if (this.vel.y != 0) {
+
+				if (this.falling || this.jumping) {
 					this.renderable.setCurrentAnimation('anJump');
 				}
 			},
@@ -99,11 +99,11 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				}
 
 				this.updateMovement();
-                this.updateSound();
-				this.updateAnimation();
+				this.updateSound();
 				this.handleCollisions();
+				this.updateAnimation();
 				this.parent();
-                
+
 				if (this.vel.x!=0 || this.vel.y!=0) {
 					return true;
 				}
