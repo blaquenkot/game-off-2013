@@ -15,7 +15,10 @@ define([], function() {
 		{name: 'logo', type: 'image', src: '/game-off-2013/assets/logo.png'},
 		{name: 'difusebg', type: 'image', src: '/game-off-2013/assets/difusebg.png'},
 
+		// Hints
 		{name: 'hintWater', type: 'image', src: '/game-off-2013/assets/hintwater.png'},
+		{name: 'hintMelt', type: 'image', src: '/game-off-2013/assets/hintmelt.png'},
+		{name: 'hintPoison', type: 'image', src: '/game-off-2013/assets/hintpoison.png'},
 		{name: 'hintPermanent', type: 'image', src: '/game-off-2013/assets/hintpermanent.png'},
 
 		// Background
@@ -27,12 +30,12 @@ define([], function() {
 		// Maps
 		{name: 'level1', type: 'tmx', src: '/game-off-2013/data/level1.tmx'},
 		{name: 'level2', type: 'tmx', src: '/game-off-2013/data/level2.tmx'},
-    {name: 'level3', type: 'tmx', src: '/game-off-2013/data/level3.tmx'},
-    {name: 'level4', type: 'tmx', src: '/game-off-2013/data/level4.tmx'},
-    {name: 'level5', type: 'tmx', src: '/game-off-2013/data/level5.tmx'},
-    {name: 'level6', type: 'tmx', src: '/game-off-2013/data/level6.tmx'},
-    {name: 'level7', type: 'tmx', src: '/game-off-2013/data/level7.tmx'},
- 	{name: 'level8', type: 'tmx', src: '/game-off-2013/data/level8.tmx'},
+		{name: 'level3', type: 'tmx', src: '/game-off-2013/data/level3.tmx'},
+		{name: 'level4', type: 'tmx', src: '/game-off-2013/data/level4.tmx'},
+		{name: 'level5', type: 'tmx', src: '/game-off-2013/data/level5.tmx'},
+		{name: 'level6', type: 'tmx', src: '/game-off-2013/data/level6.tmx'},
+		{name: 'level7', type: 'tmx', src: '/game-off-2013/data/level7.tmx'},
+		{name: 'level8', type: 'tmx', src: '/game-off-2013/data/level8.tmx'},
 
 		// Background Music
 		{name: "background", type: "audio", src: "/game-off-2013/data/music/", channel : 1},

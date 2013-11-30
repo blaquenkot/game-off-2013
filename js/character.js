@@ -137,11 +137,15 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 				}
 
 				if (res.obj instanceof MeltTool) {
+					new HintBox(8, 58, 'hintMelt').show();
+
 					me.audio.play("newTool", false, null, 0.4);
 					this.addTool('melt', res.obj);
 				}
 
 				if (res.obj instanceof PoisonTool) {
+					new HintBox(8, 58, 'hintPoison').show();
+
 					me.audio.play("newTool", false, null, 0.4);
 					this.addTool('poison', res.obj);
 				}
