@@ -11,6 +11,10 @@ $(function() {
 	function showStats() {
 		var statsContainer = $('.stats');
 
+		if (statsContainer.height() === 0) {
+			statsContainer.animate({height: 95}, 500);
+		}
+
 		_.each(stats, function(value, name) {
 			var number = Number(value);
 			if (name === 'waterRaised' || name === 'iceMelted') {
