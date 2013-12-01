@@ -93,7 +93,7 @@ define(['entities/tools/waterTool', 'entities/tools/meltTool', 'entities/tools/p
 						this.playingWater = true;
 						me.audio.play('waterNoise', false, function() {
 							_this.playingWater = false;
-						}, 0.4);
+						}, 0.3);
 					}
 				}
 

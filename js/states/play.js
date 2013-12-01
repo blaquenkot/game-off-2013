@@ -55,6 +55,12 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 					if (!allIceMelted()) {
 						_this.environment.iceMelting += melt || 0.6;
 						_this.environment.reduceYears(1);
+						if (!_this.playingWater) {
+							_this.playingWater = true;
+							me.audio.play('waterNoise', false, function() {
+								_this.playingWater = false;
+							}, 0.3);
+						};
 						me.event.publish('/tools/raiseWater', [0.1]);
 					}
 				});
