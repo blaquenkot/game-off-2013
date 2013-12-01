@@ -92,3 +92,21 @@ footer {
 	margin: 0;
 	padding: 0;
 }
+
+.controls-container {
+	width: 912px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.controls {
+	font-size: 12px;
+	text-align: left;
+	position: absolute;
+	right: 0;
+}
+
+.controls ul {
+	list-style: none;
+	padding: 0;
+}
