@@ -83,6 +83,10 @@ footer {
 	transition: max-height 0.8s;
 }
 
+.stats-container {
+	min-height: 50px;
+}
+
 .stats.hidden {
 	max-height: 0px;
 }
