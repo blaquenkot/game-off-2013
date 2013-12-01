@@ -55,6 +55,12 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 					if (!allIceMelted()) {
 						_this.environment.iceMelting += melt || 0.6;
 						_this.environment.reduceYears(1);
+						if (!_this.playingWater) {
+							_this.playingWater = true;
+							me.audio.play('waterNoise', false, function() {
+								_this.playingWater = false;
+							}, 0.3);
+						};
 						me.event.publish('/tools/raiseWater', [0.1]);
 					}
 				});
@@ -120,7 +126,7 @@ define(['hud', 'stateManager', 'environment', 'water', 'entities/log', 'entities
 				this.environment = new Environment();
 				this.hud = new Hud.Container();
 				me.game.add(this.hud);
-				me.levelDirector.loadLevel('level1');
+				me.levelDirector.loadLevel('level4');
 				me.audio.playTrack('background', 0.7);
 			},
 			onDestroyEvent: function() {
