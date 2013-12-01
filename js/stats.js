@@ -23,9 +23,9 @@ $(function() {
 	}
 
 	me.event.subscribe('/game/finished', function(newStats) {
-		stats.waterRaised = ((Number(stats.waterRaised) + newStats.waterRaised) * 10).toFixed(2);
+		stats.waterRaised = (Number(stats.waterRaised) + newStats.waterRaised).toFixed(2);
 		stats.yearsLost = Number(stats.yearsLost) + newStats.yearsLost;
-		stats.iceMelted = ((Number(stats.iceMelted) + newStats.iceMelted) * 10).toFixed(2);
+		stats.iceMelted = (Number(stats.iceMelted) + newStats.iceMelted).toFixed(2);
 		stats.animalsKilled = Number(stats.animalsKilled) + newStats.animalsKilled;
 		showStats();
 
