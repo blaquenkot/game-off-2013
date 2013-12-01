@@ -11,9 +11,7 @@ $(function() {
 	function showStats() {
 		var statsContainer = $('.stats');
 
-		if (statsContainer.height() === 0) {
-			statsContainer.animate({height: 110}, 500);
-		}
+		statsContainer.removeClass('hidden');
 
 		_.each(stats, function(value, name) {
 			var number = Number(value);
